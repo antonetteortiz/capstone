@@ -3,9 +3,11 @@ import { Link, Route, Switch, Redirect } from "react-router-dom";
 // import { Navbar } from "reactstrap";
 import "./App.css";
 import Music from "./components/Music";
-// import Musicinfo from "./components/Musicinfo";
 import CreateMusic from "./components/CreateMusic";
 import UpdateMusic from "./components/UpdateMusic";
+import Recipe from "./components/Recipe"
+import HomePage from "./components/HomePage"
+import Footer from "./components/Footer";
 
 function App() {
   // In react hooks this is how we set state
@@ -14,10 +16,11 @@ function App() {
   const [music, setMusic] = useState([]);
   const [artistSearch, setArtistSearch] = useState("");
   const [filteredList, setFilteredList] = useState([]);
+  
   // UseEffect works similarily to componentDidMount
   useEffect(() => {
   
-    let apiUrl = "https://garifunamusic.herokuapp.com/Music";
+    let apiUrl = "https://yurumeiapi.herokuapp.com/Music";
     fetch(apiUrl)
       .then((data) => data.json())
       .then((music) => setMusic(music));
@@ -32,7 +35,6 @@ function App() {
     setArtistSearch(e.target.value.toLowerCase());
 
     // console.log("state", artistSearch)
-   
 
     if (artistSearch.length > 1) {
       // console.log("!!!", music)
@@ -41,19 +43,58 @@ function App() {
       );
       console.log(newArtistArr);
       setFilteredList(newArtistArr);
-    } 
+    }
 
-      // let apiUrl = "https://garifunamusic.herokuapp.com/Music";
-      // fetch(apiUrl)
-      //   .then((data) => data.json())
-      //   .then((music) => setMusic(music));
+    // let apiUrl = "https://garifunamusic.herokuapp.com/Music";
+    // fetch(apiUrl)
+    //   .then((data) => data.json())
+    //   .then((music) => setMusic(music));
   };
 
-  // console.log(music)
+
+  const [recipe, setRecipe] = useState([]);
+  const [recipeSearch, setRecipeSearch] = useState("");
+  const [filteredRecipeList, setFilteredRecipeList] = useState([]);
+
+   useEffect(() => {
+     let apiUrl = "https://yurumeiapi.herokuapp.com/Recipe";
+     fetch(apiUrl)
+       .then((data) => data.json())
+       .then((recipe) => setRecipe(recipe));
+       console.log(recipe);
+
+     // Empty array bracket will only run useEffect once, because we are fetching
+     //Argument passed here is saying everytime our argument changes the API will be called.
+   }, [recipe]);
+
+  const searchRecipe = (e) => {
+    e.preventDefault();
+    // console.log(e.target.value);
+    setRecipeSearch(e.target.value.toLowerCase());
+
+    // console.log("state", recipeSearch)
+
+    if (recipeSearch.length > 1) {
+      // console.log("!!!", recipe)
+      let newRecipeArr = recipe.filter((input) =>
+        input.recipeName.toLowerCase().includes(recipeSearch)
+      );
+      console.log(newRecipeArr);
+      setFilteredRecipeList(newRecipeArr);
+    }
+
+    // let apiUrl = "https://yurumeiapi.herokuapp.com/Recipe";
+    // fetch(apiUrl)
+    //   .then((data) => data.json())
+    //   .then((recipe) => setRecipe(recipe));
+  };
+
+  // console.log(recipe)
 
   return (
-    <div className="body">
-      <nav className="navbar navbar-light bg-light">
+    <div className="page-container">
+      <div className="content-wrap">
+        {/* <nav className="navbar navbar-light bg-light">
         <a className="navbar-brand" href="#">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Flag_of_Garifuna.svg"
@@ -63,8 +104,11 @@ function App() {
             alt=""
             loading="lazy"
           />
-          <Link to="/mern-application"> GariMusic </Link>
+          <Link to="/capstone"> Yurumei </Link>
+          <Link to="/music"> Music </Link>
           <Link to="/createmusic"> Create Artist </Link>
+          <Link to="/signup"> SignUp </Link>
+          <Link to="/signin"> SignIn </Link>
         </a>
 
         <form className="form-inline">
@@ -85,26 +129,20 @@ function App() {
             Search
           </button>
         </form>
-      </nav>
+      </nav> */}
 
-      <main>
         <Switch>
-          <Route exact path="/mern-application/">
-            <Music musicList={music} filteredList={filteredList} artistSearch={artistSearch}/>
+          <Route exact path="/capstone/">
+            <HomePage />
           </Route>
 
-          {/* {music.length !== 0 ? (
-            <Route
-              exact
-              path="/music/:id"
-              render={(routerProps) => {
-                let music = music.filter(
-                  (music) => music.id == routerProps.match.params.id
-                );
-                return <Musicinfo musicList={music} />;
-              }}
+          <Route exact path="/music">
+            <Music
+              musicList={music}
+              filteredList={filteredList}
+              artistSearch={artistSearch}
             />
-          ) : null} */}
+          </Route>
 
           <Route path="/createmusic">
             <CreateMusic />
@@ -117,8 +155,17 @@ function App() {
               return <UpdateMusic music={music} />;
             }}
           />
+
+          <Route exact path="/recipe">
+            <Recipe
+              recipeList={recipe}
+              filteredRecipeList={filteredRecipeList}
+              recipeSearch={recipeSearch}
+            />
+          </Route>
         </Switch>
-      </main>
+      </div>
+      <Footer />
     </div>
   );
 }

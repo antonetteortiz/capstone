@@ -57,7 +57,7 @@ function CreateMusic() {
           </div>
 
           <div className="form-group">
-            <label for="exampleInputEmail1">Album Title</label>
+            <label for="exampleInputEmail1">Album/Track Title</label>
             <input
               type="text"
               className="form-control"
@@ -69,39 +69,13 @@ function CreateMusic() {
           </div>
 
           <div className="form-group">
-            <label for="exampleInputEmail1">Genre</label>
-            <input
-              type="text"
-              className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              onChange={(event) => setGenre(event.target.value)}
-            />
-            <small id="emailHelp" className="form-text text-muted"></small>
-          </div>
-
-          <div className="form-group">
-            <label for="exampleInputEmail1">Label</label>
-            <input
-              type="text"
-              className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              onChange={(event) => setLabel(event.target.value)}
-            />
-            <small id="emailHelp" className="form-text text-muted"></small>
-          </div>
-
-          <div className="form-group">
-            <label for="exampleInputEmail1">Producer</label>
-            <input
-              type="text"
-              className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              onChange={(event) => setProducer(event.target.value)}
-            />
-            <small id="emailHelp" className="form-text text-muted"></small>
+            <label for="exampleFormControlSelect1">Genre</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option></option>
+              <option>Paranda</option>
+              <option>Hugu Hugu</option>
+              <option>Punta</option>
+            </select>
           </div>
 
           <div className="form-group">
@@ -117,15 +91,18 @@ function CreateMusic() {
           </div>
 
           <div className="form-group">
-            <label for="exampleInputEmail1">Track List</label>
+            <label for="exampleInputEmail1">Streaming Link</label>
             <input
               type="text"
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              onChange={(event) => setTrackList(event.target.value)}
+              onChange={(event) => setLabel(event.target.value)}
             />
-            <small id="emailHelp" className="form-text text-muted"></small>
+            <small id="emailHelp" className="form-text text-muted">
+              Please insert link to streaming site (ie Spotify, SoundCloud,
+              AppleMusic etc)
+            </small>
           </div>
 
           <div className="form-group">
@@ -160,9 +137,9 @@ function CreateMusic() {
             Submit
           </button>
         </form>
-      ) : 
-        <Redirect to="/mern-application" />
-      }
+      ) : (
+        <Redirect to="/capstone" />
+      )}
     </div>
   );
 }

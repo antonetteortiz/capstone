@@ -53,7 +53,7 @@ function UpdateMusic() {
       .then(function (response) {
         if (response.status == 200) {
             // change when fdeploying
-          window.location.href = "https://antonetteortiz.github.io/mern-application/";
+          window.location.href = "https://antonetteortiz.github.io/capstone/";
         }
         // alert("Seremein (Thanks) for updating to our libary.");
         console.log(response);
