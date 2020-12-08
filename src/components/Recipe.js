@@ -15,31 +15,6 @@ import Container from "@material-ui/core/Container";
 import Navbar from "./Navbar"
 
 function Recipe(props) {
-    // const remove = (recipeName) => {
-    // let encodedRecipeName = encodeURI(recipeName);
-    // axios
-    //   .delete(
-    //     `https://garifunamusic.herokuapp.com/Music/${encodedRecipeName}`,
-    //     {
-    //       recipeName,
-    //     }
-    //   )
-    //   .then(function (response) {
-    //     alert("Artist has been deleted!");
-    //     console.log(response);
-    //   });
-//   return 
-//   (
-    // <Typography variant="body2" color="textSecondary" align="center">
-    //   {"Copyright © "}
-    //   <Link color="inherit" href="https://material-ui.com/">
-    //     Your Website
-    //   </Link>{" "}
-    //   {new Date().getFullYear()}
-    //   {"."}
-    // </Typography>
-//   );
-// }
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -49,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
       "url(https://d1ralsognjng37.cloudfront.net/5c8070fb-fc4a-477b-8734-b6bbe66d5532.jpeg)",
     backgroundRepeat: "no-repeat",
     backgroundSize: "auto",
+    // opacity: "0.5",
     padding: theme.spacing(8, 0, 6),
   },
   heroButtons: {
@@ -75,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [1];
 
 const classes = useStyles();
 
@@ -83,51 +59,51 @@ const classes = useStyles();
 
 
 
-let recipeList = props.recipeList.map((recipe, i) =>{
-    
+let recipeList = props.recipeList.map((recipe, i) =>{ 
+  // console.log(props);
 return (
-  <React.Fragment>
-    <CssBaseline />
+    <React.Fragment>
+      <CssBaseline />
 
-    <main>
-      {/* Hero unit */}
+      <main>
+        {/* Hero unit */}
 
-      {/* <Container className={classes.cardGrid} maxWidth="md"> */}
-        {/* End hero unit */}
-        {/* <Grid container spacing={4}> */}
-          {cards.map((props) => (
-            <Grid item key={props} xs={12} sm={6} md={4}>
-              <Card className={classes.card}>
-                <CardMedia
-                  className={classes.cardMedia}
-                  image={recipe.photo}
-                  title="Image title"
-                />
-                <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {recipe.name}
-                  </Typography>
-                  <Typography>{recipe.description}</Typography>
-                </CardContent>
-                <CardActions>
-                  <Link to="">
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                  </Link>
+        {/* <Container className={classes.cardGrid} maxWidth="md"> */}
+          {/* End hero unit */}
+          {/* <Grid container spacing={4}> */}
+            {cards.map((props) => (
+              
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image={recipe.photo}
+                    title="Image title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {recipe.name}
+                    </Typography>
+                    <Typography>{recipe.description}</Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Link to="">
+                      <Button size="small" color="primary">
+                        View
+                      </Button>
+                    </Link>
 
-                  <Link to="">
-                    <Button size="small" color="primary">
-                      Like
-                    </Button>
-                  </Link>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        {/* </Grid> */}
-      {/* </Container> */}
-    </main>
+                    <Link to="">
+                      <Button size="small" color="primary">
+                        Like
+                      </Button>
+                    </Link>
+                  </CardActions>
+                </Card>
+              
+            ))}
+          {/* </Grid> */}
+        {/* </Container> */}
+      </main>
   </React.Fragment>
 );
 });
@@ -229,10 +205,12 @@ return (
           </Grid>
         </div>
       </Container>
+
       <Container className={classes.cardGrid} maxWidth="md">
+      
         <Grid container spacing={4}>
-        {props.recipeList}
-          {/* {props.recipeSearch.length > 1 ? filteredRecipeList : recipeList} */}
+        {/* {props.recipeList} */}
+          {props.recipeSearch.length > 1 ? filteredRecipeList : recipeList}
         </Grid>
       </Container>
     </div>

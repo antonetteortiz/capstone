@@ -52,7 +52,7 @@ function App() {
   };
 
 
-  const [recipe, setRecipe] = useState([]);
+  const [recipe, setRecipe] = useState([{}]);
   const [recipeSearch, setRecipeSearch] = useState("");
   const [filteredRecipeList, setFilteredRecipeList] = useState([]);
 
@@ -60,8 +60,9 @@ function App() {
      let apiUrl = "https://yurumeiapi.herokuapp.com/Recipe";
      fetch(apiUrl)
        .then((data) => data.json())
-       .then((recipe) => setRecipe(recipe));
-       console.log(recipe);
+       .then((recipe) => setRecipe(recipe))
+       .catch((err) => console.log(err));
+      //  console.log(recipe);
 
      // Empty array bracket will only run useEffect once, because we are fetching
      //Argument passed here is saying everytime our argument changes the API will be called.
