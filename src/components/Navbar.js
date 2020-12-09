@@ -62,7 +62,7 @@ const style = {
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             <Link
-              to="/capstone"
+              to="/home"
               style={{ textDecoration: "none", color: "black" }}
             >
               Yurumei

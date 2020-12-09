@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios"
 import "./Music.css";
-import NavbarSearch from "./NavbarSearch";
+import Navbar from "./Navbar";
 
 function Music(props) {
 
@@ -74,7 +74,6 @@ function Music(props) {
 
   return (
     <div>
-      <NavbarSearch />
       <div className="musicContainer">
         <div className="gariInfo">
           <h1>Garifuna Music</h1>

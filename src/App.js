@@ -7,6 +7,7 @@ import CreateMusic from "./components/CreateMusic";
 import UpdateMusic from "./components/UpdateMusic";
 import Recipe from "./components/Recipe"
 import HomePage from "./components/HomePage"
+import Navbar from "./components/Navbar"
 import Footer from "./components/Footer";
 
 function App() {
@@ -95,6 +96,7 @@ function App() {
   return (
     <div className="page-container">
       <div className="content-wrap">
+        <Navbar />
         {/* <nav className="navbar navbar-light bg-light">
         <a className="navbar-brand" href="#">
           <img
@@ -133,7 +135,7 @@ function App() {
       </nav> */}
 
         <Switch>
-          <Route exact path="/capstone/">
+          <Route exact path="/home/">
             <HomePage />
           </Route>
 
@@ -158,11 +160,13 @@ function App() {
           />
 
           <Route exact path="/recipe">
-            <Recipe
-              recipeList={recipe}
-              filteredRecipeList={filteredRecipeList}
-              recipeSearch={recipeSearch}
-            />
+            <div className="recipe-box">
+              <Recipe
+                recipeList={recipe}
+                filteredRecipeList={filteredRecipeList}
+                recipeSearch={recipeSearch}
+              />
+            </div>
           </Route>
         </Switch>
       </div>

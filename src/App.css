@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .body {
   background-color: #FFD800;
 
@@ -12,3 +16,12 @@
 .content-wrap{
   flex: 1;
 }
+
+.recipe-box > div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100vw;
+
+}
+
