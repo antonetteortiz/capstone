@@ -1,21 +1,12 @@
-.app {
-  width: 100%;
+.carousel {
+  max-height: 700px;
+  width: 100vw;
+  object-fit: cover;
+  border: 1px solid red;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
-
-.img-container {
-  background-image: url("../images/Yurumein-2017_28.jpg"); 
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 120vh;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: column;
-  padding-bottom: 5%;
+.card-container {
+  width: 100vh;
+  
 }
 

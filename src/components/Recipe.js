@@ -11,8 +11,9 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+// import { Navbar } from "react-bootstrap";
 // import Link from "@material-ui/core/Link";
-// import Navbar from "./Navbar";
+import Navbar from "./Navbar";
 
 function Recipe(props) {
   const useStyles = makeStyles((theme) => ({
@@ -41,17 +42,18 @@ function Recipe(props) {
       paddingBottom: theme.spacing(8),
     },
     card: {
-      height: "100%",
+      height: "150%",
       width: "30%",
       display: "flex",
       flexDirection: "column",
       margin: "10px",
+      border: "1px solid black"
     },
     cardMedia: {
       paddingTop: "56.25%", // 16:9
     },
     cardContent: {
-      flexGrow: 1,
+      height: "150px"
     },
     footer: {
       backgroundColor: theme.palette.background.paper,
@@ -59,13 +61,17 @@ function Recipe(props) {
     },
 
     recipeCard: {
-      marginLeft: "auto",
-      marginRight: "auto",
+      margin: "auto 0",
+      marginTop: "30px",
+      backgroundColor: "#FFD800",
+      align: "center"
     },
     header: {
+
       height: "500px",
-      border: "1px solid red",
-      width: "100vw",
+      
+      // border: "1px solid red",
+      // width: "100vw",
     },
   }));
 
@@ -126,11 +132,13 @@ function Recipe(props) {
           {cards.map((props) => (
             <Grid item key={props} xs={12} sm={6} md={4}>
               <Card className={classes.card}>
+              
                 <CardMedia
                   className={classes.cardMedia}
                   image={recipe.photo}
                   title="Image title"
                 />
+
                 <CardContent className={classes.cardContent}>
                   <Typography gutterBottom variant="h5" component="h2">
                     {recipe.name}
@@ -162,15 +170,16 @@ function Recipe(props) {
 
   return (
     <div>
+    <Navbar />
       <div className={classes.heroContent}>
         <Container maxWidth="sm" className={classes.header}>
-          {/* <Typography
-            component="h1"
-            variant="h2"
-            align="center"
-            color="textPrimary"
-            gutterBottom
-          ></Typography> */}
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <Typography variant="h5" align="center" color="black" paragraph>
             Garifuna food is traditionally based on the staple foods of cassava,
             plantain and banana, combined with fish and other seafood. The
@@ -192,27 +201,58 @@ function Recipe(props) {
           </Typography>
 
           <div className={classes.heroButtons}>
-            <Grid container spacing={4} justify="center">
+            <Grid container spacing={2} justify="center">
               <Grid item>
-                <Button variant="contained" color="yellow">
-                  {/* Eventually a form to search recipe by name
-                   */}
+                <form className="form-inline">
+                  <input
+                    className="form-control mr-sm-2"
+                    type="text"
+                    placeholder="Enter Name of Dish"
+                    style={{ border: "1px solid black" }}
+                    // aria-label="Search"
+                    // value={recipeSearch}
+                    // onChange={searchRecipe}
+                  />
+
+                  <button
+                    className="btn my-2 my-lg-0"
+                    style={{
+                      border: "1px solid black",
+                      backgroundColor: "#FFD800",
+                    }}
+                    type="submit"
+                    // onClick={() => searchRecipe()}
+                  >
+                    Search
+                  </button>
+                  <Link to="/addrecipe">
+                    <button
+                      className="btn my-2 my-lg-0 form-inline"
+                      style={{
+                        border: "1px solid black",
+                        backgroundColor: "#FFD800",
+                        marginLeft: "10px",
+                      }}
+                      type="submit"
+                      // onClick={() => searchRecipe()}
+                    >
+                      Add Recipe
+                    </button>
+                  </Link>
+                </form>
+
+                {/* <Button variant="contained" color="yellow">
+                  Eventually a form to search recipe by name
+                  
                   SEARCH FORM
-                </Button>
+                </Button> */}
               </Grid>
-              {/* <Grid item>
-                <Button variant="outlined" color="primary">
-                  Secondary action
-                </Button>
-              </Grid> */}
             </Grid>
           </div>
         </Container>
 
         <Grid container spacing={4} className={classes.recipeCard}>
-
-            {props.recipeSearch.length > 1 ? filteredRecipeList : recipeList}
-          
+          {props.recipeSearch.length > 1 ? filteredRecipeList : recipeList}
         </Grid>
       </div>
 

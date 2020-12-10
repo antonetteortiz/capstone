@@ -1,0 +1,19 @@
+.landingpage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.logo-container {
+  background-image: url("../images/yurumei.svg"); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 120vh;
+  width: 100%;
+  display: flex;
+justify-content: flex-end;
+  align-items: center;
+}

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link, Route, Switch, Redirect } from "react-router-dom";
-// import { Navbar } from "reactstrap";
 import "./App.css";
 import Music from "./components/Music";
 import CreateMusic from "./components/CreateMusic";
 import UpdateMusic from "./components/UpdateMusic";
-import Recipe from "./components/Recipe"
-import HomePage from "./components/HomePage"
-import Navbar from "./components/Navbar"
-import Footer from "./components/Footer";
+import Recipe from "./components/Recipe";
+import AddRecipe from "./components/AddRecipe";
+import HomePage from "./components/HomePage";
+import LandingPage from "./components/LandingPage";
+
 
 function App() {
   // In react hooks this is how we set state
@@ -96,7 +96,7 @@ function App() {
   return (
     <div className="page-container">
       <div className="content-wrap">
-        <Navbar />
+       {/* <Navbar />  */}
         {/* <nav className="navbar navbar-light bg-light">
         <a className="navbar-brand" href="#">
           <img
@@ -135,6 +135,10 @@ function App() {
       </nav> */}
 
         <Switch>
+          <Route exact path="/welcome">
+            <LandingPage />
+          </Route>
+
           <Route exact path="/home/">
             <HomePage />
           </Route>
@@ -168,9 +172,12 @@ function App() {
               />
             </div>
           </Route>
+          <Route path="/addrecipe">
+            <AddRecipe />
+          </Route>
         </Switch>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

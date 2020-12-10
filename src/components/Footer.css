@@ -1,7 +1,13 @@
 .main-footer{
-    color: black;
-    background-color: #FFD800;
+    color: #FFD800;
+    background-color: black;
     padding-top: 3em;
     bottom: 0;
-    width: 100%;
+    width: auto;
+}
+
+.footer {
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
