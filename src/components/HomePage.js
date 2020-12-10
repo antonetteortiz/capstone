@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./HomePage.css";
 import Navbar from "./Navbar";
 import { Carousel } from "react-bootstrap";
@@ -49,113 +50,115 @@ function HomePage() {
           <img classNameName="d-block w-100" src={Slide7} alt="Third slide" />
         </Carousel.Item>
       </Carousel>
-
-      <div classNameName="card-container">
-        <div className="card mb-3" style={{maxWidth: "540px"}}>
-          <div className="row no-gutters">
-            <div className="col-md-4">
-              <img src={History} className="card-img" alt="..." />
-            </div>
-            <div className="col-md-8">
-              <div className="card-body">
-                <h5 className="card-title">History</h5>
-                <p className="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                
+      <Link to="/history">
+        <div classNameName="card-container">
+          <div className="card mb-3" style={{ maxWidth: "540px" }}>
+            <div className="row no-gutters">
+              <div className="col-md-4">
+                <img src={History} className="card-img" alt="..." />
+              </div>
+              <div className="col-md-8">
+                <div className="card-body">
+                  <h5 className="card-title">History</h5>
+                  <p className="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </Link>
 
-      <div classNameName="card-container">
-        <div className="card mb-3" style={{maxWidth: "540px"}}>
-          <div className="row no-gutters">
-            <div className="col-md-4">
-              <img src={Language} className="card-img" alt="..." />
-            </div>
-            <div className="col-md-8">
-              <div className="card-body">
-                <h5 className="card-title">Language</h5>
-                <p className="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                
+      <Link to="/language">
+        <div classNameName="card-container" style={{ display: "block" }}>
+          <div className="card mb-3" style={{ maxWidth: "540px" }}>
+            <div className="row no-gutters">
+              <div className="col-md-4">
+                <img src={Language} className="card-img" alt="..." />
+              </div>
+              <div className="col-md-8">
+                <div className="card-body">
+                  <h5 className="card-title">Language</h5>
+                  <p className="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </Link>
 
-      <div classNameName="card-container">
-        <div className="card mb-3" style={{maxWidth: "540px"}}>
-          <div className="row no-gutters">
-            <div className="col-md-4">
-              <img src={Food} className="card-img" alt="..." />
-            </div>
-            <div className="col-md-8">
-              <div className="card-body">
-                <h5 className="card-title">Food</h5>
-                <p className="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                
+      <Link to="/recipe">
+        <div classNameName="card-container">
+          <div className="card mb-3" style={{ maxWidth: "540px" }}>
+            <div className="row no-gutters">
+              <div className="col-md-4">
+                <img src={Food} className="card-img" alt="..." />
+              </div>
+              <div className="col-md-8">
+                <div className="card-body">
+                  <h5 className="card-title">Food</h5>
+                  <p className="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </Link>
 
-      <div classNameName="card-container">
-        <div className="card mb-3" style={{maxWidth: "540px"}}>
-          <div className="row no-gutters">
-            <div className="col-md-4">
-              <img src={Music} className="card-img" alt="..." />
-            </div>
-            <div className="col-md-8">
-              <div className="card-body">
-                <h5 className="card-title">Music</h5>
-                <p className="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                
+      <Link to="/music">
+        <div classNameName="card-container">
+          <div className="card mb-3" style={{ maxWidth: "540px" }}>
+            <div className="row no-gutters">
+              <div className="col-md-4">
+                <img src={Music} className="card-img" alt="..." />
+              </div>
+              <div className="col-md-8">
+                <div className="card-body">
+                  <h5 className="card-title">Music</h5>
+                  <p className="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </Link>
 
-      <div classNameName="card-container">
-        <div className="card mb-3" style={{maxWidth: "540px"}}>
-          <div className="row no-gutters">
-            <div className="col-md-4">
-              <img src={Forum} className="card-img" alt="..." />
-            </div>
-            <div className="col-md-8">
-              <div className="card-body">
-                <h5 className="card-title">Forum</h5>
-                <p className="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                
+      <Link to="/forum" >
+        <div classNameName="card-container">
+          <div className="card mb-3" style={{ width: "75%" }}>
+            <div className="row no-gutters">
+              <div className="col-md-4">
+                <img src={Forum} className="card-img" alt="..." />
+              </div>
+              <div className="col-md-8">
+                <div className="card-body">
+                  <h5 className="card-title">Forum</h5>
+                  <p className="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-
+      </Link>
 
       {/* <Footer /> */}
     </div>

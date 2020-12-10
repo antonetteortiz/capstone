@@ -5,8 +5,7 @@
   border: 1px solid red;
   display: flex;
 }
-.card-container {
-  width: 100vh;
-  
+.card-title {
+  text-decoration: none;
 }
 
