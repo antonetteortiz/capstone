@@ -22,33 +22,33 @@ function HomePage() {
     <div>
       <Navbar />
       <Carousel className="carousel">
-        <Carousel.Item>
-          <img classNameName="d-block w-100" src={Slide1} alt="First slide" />
-        </Carousel.Item>
+        {/* <Carousel.Item>
+          <img classNameName="d-block w-100 carousel-image" src={Slide1} alt="First slide" />
+        </Carousel.Item> */}
+
+        {/* <Carousel.Item>
+          <img classNameName="d-block w-100 carousel-image" src={Slide2} alt="Third slide" />
+        </Carousel.Item> */}
 
         <Carousel.Item>
-          <img classNameName="d-block w-100" src={Slide2} alt="Third slide" />
+          <img className="d-block w-100 carousel-image" src={Slide3} alt="Third slide" />
         </Carousel.Item>
 
-        <Carousel.Item>
-          <img classNameName="d-block w-100" src={Slide3} alt="Third slide" />
-        </Carousel.Item>
+        {/* <Carousel.Item>
+          <img classNameName="d-block w-100 carousel-image" src={Slide4} alt="Third slide" />
+        </Carousel.Item> */}
+
+        {/* <Carousel.Item>
+          <img classNameName="d-block w-100 carousel-image" src={Slide5} alt="Third slide" />
+        </Carousel.Item> */}
 
         <Carousel.Item>
-          <img classNameName="d-block w-100" src={Slide4} alt="Third slide" />
+          <img className="d-block w-100 carousel-image" src={Slide6} alt="Third slide" />
         </Carousel.Item>
 
-        <Carousel.Item>
-          <img classNameName="d-block w-100" src={Slide5} alt="Third slide" />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img classNameName="d-block w-100" src={Slide6} alt="Third slide" />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img classNameName="d-block w-100" src={Slide7} alt="Third slide" />
-        </Carousel.Item>
+        {/* <Carousel.Item>
+          <img classNameName="d-block w-100 carousel-image" src={Slide7} alt="Third slide" />
+        </Carousel.Item> */}
       </Carousel>
 
       <div className="container">

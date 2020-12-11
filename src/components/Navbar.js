@@ -65,7 +65,7 @@ const style = {
               to="/home"
               style={{ textDecoration: "none", color: "black" }}
             >
-              Yurumei
+              YURUMEI
             </Link>
           </Typography>
           <Button color="inherit" onClick={handleAccount}>

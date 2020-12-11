@@ -8,19 +8,13 @@
     return (
       <div>
         <div className="landingpage">
-          <div className="logo-container">
-              <div>
-          <Link to="/home">
-            <Button variant="outline-warning" size="lg" className="button"
-            style={{display: "table-cell", verticalAlign: "middle", textAlign: "center"}}>
-              ENTER
-            </Button>
-          </Link>
-        
+          <a href="/home" className="logo-link">
+            <div className="logo-container">
+              <div></div>
+            </div>
+          </a>
         </div>
-          </div>
-        </div>
-</div>
+      </div>
     );
   }
 
