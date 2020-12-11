@@ -8,6 +8,7 @@ import Recipe from "./components/Recipe";
 import AddRecipe from "./components/AddRecipe";
 import HomePage from "./components/HomePage";
 import LandingPage from "./components/LandingPage";
+import Footer from "./components/Footer"
 
 
 function App() {
@@ -177,7 +178,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

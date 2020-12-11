@@ -4,8 +4,6 @@ import "./Footer.css"
 function Footer() {
   return (
     <div className="footer">
-      {/* const Footer = () => {
-          return ( */}
             <div className="main-footer">
               <div className="container">
                 <div className="row">
@@ -51,8 +49,6 @@ function Footer() {
                 </div>
               </div>
             </div>
-         
-        {/* }; */}
     </div>
     ); 
 }

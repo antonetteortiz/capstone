@@ -74,6 +74,7 @@ function Music(props) {
 
   return (
     <div>
+    <Navbar />
       <div className="musicContainer">
         <div className="gariInfo">
           <h1>Garifuna Music</h1>
