@@ -1,0 +1,22 @@
+.mainBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+}
+
+.gariInfo {
+    padding:10px;
+    margin: 10px;
+}
+
+.gariInfo span {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info {
+    display: flex;
+}

@@ -1,0 +1,70 @@
+body {
+  background: #FFD800;
+  color: black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.carousel {
+  max-width: 100vw;
+  /* max-height: 250px; */
+  height: 550px;
+}
+
+.carousel-inner {
+  height: 550px;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  top: 275px;
+}
+
+.carousel-indicators {
+  top: 500px
+}
+
+.carousel-image {
+    object-fit: cover;
+    height: 550px;
+    width: 100vw;
+}
+
+.container {
+  display: flex;
+  width: 2000px;
+  border: 2px solid;
+  background: #FFD800;
+  margin: 30px 0;
+}
+
+.colum {
+  flex-direction: column;
+  margin-right: 10px;
+  flex: 1;
+  text-align: right;
+  padding: 10px;
+}
+
+.colum div {
+  font-size: 18px;
+  width: 500px;
+  height: 500px
+}
+
+.card {
+  margin-left: 10px
+}
+
+.image {
+  background: black;
+  flex: 1;
+  width: 1330px;
+  height: 800px;
+  border:  2px solid red;
+}
+
+.image img {
+  display: block;
+  padding: 5px;
+  width: 1200px;
+  height: 800px;
+}

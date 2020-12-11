@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Link, Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import Music from "./components/Music";
-import CreateMusic from "./components/CreateMusic";
-import UpdateMusic from "./components/UpdateMusic";
-import Recipe from "./components/Recipe";
-import AddRecipe from "./components/AddRecipe";
-import HomePage from "./components/HomePage";
-import LandingPage from "./components/LandingPage";
-import Footer from "./components/Footer"
-
+import Music from "./components/Music/Music";
+import CreateMusic from "./components/Music/CreateMusic";
+import UpdateMusic from "./components/Music/UpdateMusic";
+import Food from "./components/Food/Food";
+import Recipe from "./components/Food/Recipe";
+import AddRecipe from "./components/Food/AddRecipe";
+import HomePage from "./components/Home/HomePage";
+import LandingPage from "./components/LandingPage/LandingPage";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   // In react hooks this is how we set state
@@ -18,10 +18,9 @@ function App() {
   const [music, setMusic] = useState([]);
   const [artistSearch, setArtistSearch] = useState("");
   const [filteredList, setFilteredList] = useState([]);
-  
+
   // UseEffect works similarily to componentDidMount
   useEffect(() => {
-  
     let apiUrl = "https://yurumeiapi.herokuapp.com/Music";
     fetch(apiUrl)
       .then((data) => data.json())
@@ -53,22 +52,21 @@ function App() {
     //   .then((music) => setMusic(music));
   };
 
-
   const [recipe, setRecipe] = useState([{}]);
   const [recipeSearch, setRecipeSearch] = useState("");
   const [filteredRecipeList, setFilteredRecipeList] = useState([]);
 
-   useEffect(() => {
-     let apiUrl = "https://yurumeiapi.herokuapp.com/Recipe";
-     fetch(apiUrl)
-       .then((data) => data.json())
-       .then((recipe) => setRecipe(recipe))
-       .catch((err) => console.log(err));
-      //  console.log(recipe);
+  useEffect(() => {
+    let apiUrl = "https://yurumeiapi.herokuapp.com/Recipe";
+    fetch(apiUrl)
+      .then((data) => data.json())
+      .then((recipe) => setRecipe(recipe))
+      .catch((err) => console.log(err));
+    //  console.log(recipe);
 
-     // Empty array bracket will only run useEffect once, because we are fetching
-     //Argument passed here is saying everytime our argument changes the API will be called.
-   }, [recipe]);
+    // Empty array bracket will only run useEffect once, because we are fetching
+    //Argument passed here is saying everytime our argument changes the API will be called.
+  }, [recipe]);
 
   const searchRecipe = (e) => {
     e.preventDefault();
@@ -97,7 +95,7 @@ function App() {
   return (
     <div className="page-container">
       <div className="content-wrap">
-       {/* <Navbar />  */}
+        {/* <Navbar />  */}
         {/* <nav className="navbar navbar-light bg-light">
         <a className="navbar-brand" href="#">
           <img
@@ -164,7 +162,17 @@ function App() {
             }}
           />
 
-          <Route exact path="/recipe">
+          <Route exact path="/food">
+            <div className="recipe-box">
+              <Food
+                recipeList={recipe}
+                filteredRecipeList={filteredRecipeList}
+                recipeSearch={recipeSearch}
+              />
+            </div>
+          </Route>
+
+          <Route exact path="/recipe/:name">
             <div className="recipe-box">
               <Recipe
                 recipeList={recipe}
@@ -172,7 +180,8 @@ function App() {
                 recipeSearch={recipeSearch}
               />
             </div>
-          </Route>
+          </Route> 
+
           <Route path="/addrecipe">
             <AddRecipe />
           </Route>
