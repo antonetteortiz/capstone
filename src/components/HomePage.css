@@ -1,11 +1,39 @@
-.carousel {
-  max-height: 700px;
-  width: 100vw;
-  object-fit: cover;
-  border: 1px solid red;
-  display: flex;
-}
-.card-title {
-  text-decoration: none;
+body {
+  background: #FFD800;
+  color: black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.container {
+  display: flex;
+  width: 100%;
+  border: 2px solid;
+  background: #FFD800;
+  margin: 30px 0;
+}
+
+.colum {
+  flex-direction: column;
+  margin-right: 10px;
+  flex: 1;
+  text-align: right;
+  padding: 10px;
+}
+
+.colum div {
+  font-size: 18px;
+}
+
+.card {
+  margin-left: 10px
+}
+
+.image {
+  background: black;
+  flex: 1;
+}
+
+.image img {
+  display: block;
+  padding: 5px;
+}

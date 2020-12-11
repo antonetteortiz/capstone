@@ -5,6 +5,7 @@ import HomePage from './components/HomePage';
 import Language from './components/Language';
 import Recipe from './components/Recipe'
 import Music from './components/Music';
+import History from './components/History'
 import Forum from './components/Forum'
 
 
@@ -13,6 +14,7 @@ export default (
   <Switch>
     <Route path="/welcome" component={LandingPage} />
     <Route path="/home" component={HomePage} />
+    <Route path="/history" component={History} />
     <Route path="/language" component={Language} />
     <Route path="/recipe" component={Recipe} />
     <Route path="/music" component={Music} />

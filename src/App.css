@@ -7,15 +7,15 @@
   /* background-image: url("./images/landingPage.png"); */
 }
 
-.page-container {
+/* .page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   
   
-}
+} */
 
-.content-wrap{
+/* .content-wrap{
   flex: 1;
 }
 
@@ -25,5 +25,5 @@
   justify-content: center;
   width: 100vw;
 
-}
+} */
 
