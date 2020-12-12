@@ -9,7 +9,9 @@ function Footer() {
           <div className="row">
             {/* Column 1 */}
             <div className="col-md-4">
-              <h4>YURUMEI</h4>
+              <a href="/welcome">
+                <h4>YURUMEI</h4>
+              </a>
               <ul className="list-unstyled">
                 <a href="/history">
                   <li>History</li>
@@ -49,15 +51,12 @@ function Footer() {
             </div>
           </div>
 
-          
-
           <div className="row border-line">
             <p className="col-12">
               &copy;{new Date().getFullYear()} YURUMEI | ALL RIGHTS RESERVED |
               TERMS OF SERVICE | PRIVACY
             </p>
           </div>
-
         </div>
       </div>
     </div>

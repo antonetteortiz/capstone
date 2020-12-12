@@ -27,6 +27,7 @@ function Food(props) {
       backgroundSize: "auto",
       // opacity: "0.5",
       // padding: theme.spacing(8, 0, 6),
+      height: "55vh",
     },
     heroButtons: {
       marginTop: theme.spacing(4),
@@ -43,17 +44,18 @@ function Food(props) {
     },
     card: {
       height: "150%",
+      margin: "0 auto",
       width: "30%",
       display: "flex",
       flexDirection: "column",
       margin: "10px",
-      border: "1px solid black"
+      border: "1px solid black",
     },
     cardMedia: {
       paddingTop: "56.25%", // 16:9
     },
     cardContent: {
-      height: "150px"
+      height: "150px",
     },
     footer: {
       backgroundColor: theme.palette.background.paper,
@@ -64,12 +66,11 @@ function Food(props) {
       margin: "auto 0",
       marginTop: "30px",
       backgroundColor: "#FFD800",
-      align: "center"
+      align: "center",
     },
     header: {
-
       height: "500px",
-      
+
       // border: "1px solid red",
       // width: "100vw",
     },
@@ -79,94 +80,105 @@ function Food(props) {
 
   const classes = useStyles();
 
-  let recipeList =
-      props.recipeList.map((recipe, i) => {
-      // console.log(props);
-      return (
-        <Card className={classes.card}>
-          <CardMedia
-            className={classes.cardMedia}
-            image={recipe.photo}
-            title="Image title"
-          />
-          <CardContent className={classes.cardContent}>
-            <Typography gutterBottom variant="h5" component="h2">
-              {recipe.name}
-            </Typography>
-            <Typography>{recipe.description}</Typography>
-          </CardContent>
-          <CardActions>
-            <Link to={`/recipe/${recipe.name}`}>
-              <Button size="small" color="primary">
-                View
-              </Button>
-            </Link>
+  let recipeList = props.recipeList.map((recipe, i) => {
+    return (
+      // card container
+      <div
+        style={{
+          backgroundColor: "black",
+          color: "#ffd800",
+          width: "475px",
+          height: "600px",
+          display: "flex",
+          flexDirection: 'column',
+        }}
+      >
+        {/* image container */}
+        <div>
+          <img style={{ width: "475px", height: "356px" }} src={recipe.photo} />
+        </div>
+        {/* image container END */}
 
-            <Link to="">
-              <Button size="small" color="primary">
-                Like
-              </Button>
-            </Link>
-          </CardActions>
-        </Card>
-      );
-    });
-    
+        {/* name/description */}
+        <div style={{paddingTop: "20px"}}>
+          <h4>{recipe.name}</h4>
+          <p>{recipe.description}</p>
+        </div>
 
+        {/* action container */}
+        <div
+          style={{ display: "flex", margin: "1rem" }}
+        >
+          <button
+            style={{
+              outline: "none",
+              border: "none",
+              marginRight: "10px",
+              borderRadius: "4px",
+            }}
+          >
+            Like
+          </button>
+          <button style={{ outline: "none", border: "none" }}>View</button>
+        </div>
+        {/* action container END */}
+      </div>
+    );
+  });
 
   let filteredRecipeList = props.filteredRecipeList.map((recipe, i) => {
     return (
-      <React.Fragment>
-        <CssBaseline />
+      // card container
+      <div
+        style={{
+          backgroundColor: "black",
+          color: "#ffd800",
+          width: "475px",
+          height: "600px",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        {/* image container */}
+        <div>
+          <img style={{ width: "475px", height: "356px" }} src={recipe.photo} />
+        </div>
+        {/* image container END */}
 
-        <main>
-          {/* Hero unit */}
+        {/* name/description */}
+        <div style={{ paddingTop: "20px" }}>
+          <h4>{recipe.name}</h4>
+          <p>{recipe.description}</p>
+        </div>
 
-          {/* <Container className={classes.cardGrid} maxWidth="md"> */}
-          {/* End hero unit */}
-          {/* <Grid container spacing={4}> */}
-          {cards.map((props) => (
-            <Grid item key={props} xs={12} sm={6} md={4}>
-              <Card className={classes.card}>
-              
-                <CardMedia
-                  className={classes.cardMedia}
-                  image={recipe.photo}
-                  title="Image title"
-                />
-
-                <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {recipe.name}
-                  </Typography>
-                  <Typography>{recipe.description}</Typography>
-                </CardContent>
-                <CardActions>
-                  <Link to="">
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                  </Link>
-
-                  <Link to="">
-                    <Button size="small" color="primary">
-                      Like
-                    </Button>
-                  </Link>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-          {/* </Grid> */}
-          {/* </Container> */}
-        </main>
-      </React.Fragment>
+        {/* action container */}
+        <div style={{ display: "flex", margin: "1rem" }}>
+          <button
+            style={{
+              outline: "none",
+              border: "none",
+              marginRight: "10px",
+              borderRadius: "4px",
+            }}
+          >
+            Like
+          </button>
+          <button style={{ outline: "none", border: "none" }}>View</button>
+        </div>
+        {/* action container END */}
+      </div>
     );
   });
 
   return (
-    <div>
-    <Navbar />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-evenly",
+      }}
+    >
+      <Navbar />
       <div className={classes.heroContent}>
         <Container maxWidth="sm" className={classes.header}>
           <br />
@@ -247,9 +259,25 @@ function Food(props) {
           </div>
         </Container>
 
-        <Grid container spacing={4} className={classes.recipeCard}>
+        {/* <Grid
+          container
+          spacing={5}
+          alignItems="center"
+          className={classes.recipeCard}
+        >
           {props.recipeSearch.length > 1 ? filteredRecipeList : recipeList}
-        </Grid>
+        </Grid> */}
+      </div>
+      <div
+        style={{
+          width: "100vw",
+          margin: "100px",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr 1fr",
+          gridGap: "1rem",
+        }}
+      >
+        {props.recipeSearch.length > 1 ? filteredRecipeList : recipeList}
       </div>
 
       {/* <div>// the container with grids</div> */}
