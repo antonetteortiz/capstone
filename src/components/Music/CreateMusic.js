@@ -70,7 +70,11 @@ function CreateMusic() {
 
           <div className="form-group">
             <label for="exampleFormControlSelect1">Genre</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select
+              class="form-control"
+              id="exampleFormControlSelect1"
+              onChange={(event) => setGenre(event.target.value)}
+            >
               <option></option>
               <option>Paranda</option>
               <option>Hugu Hugu</option>

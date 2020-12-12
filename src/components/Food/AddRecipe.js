@@ -4,52 +4,50 @@ import axios from "axios";
 
 function CreateMusic() {
   console.log("Create Music")
-  const [artistName, setArtistName] = useState();
-  const [title, setTitle] = useState();
-  const [genre, setGenre] = useState();
-  const [label, setLabel] = useState();
-  const [producer, setProducer] = useState();
-  const [year, setYear] = useState();
-  const [tracks, setTrackList] = useState();
+  const [recipeName, setRecipeName] = useState();
+  const [description, setDescription] = useState();
+  const [photo, setPhoto] = useState();
+  const [servings, setServings] = useState();
+  const [ingredients, setIngredients] = useState();
+  const [steps, setSteps] = useState();
+  const [author, setAuthor] = useState();
   const [artwork, setAlbumArtwork] = useState();
-  const [sucess, setSucess] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const submitToApi = (e) => {
     e.preventDefault();
     console.log("submitting");
-    let artistInputField = document.querySelector("#artistInputField");
-    if (artistInputField.value !== "") {
+    let recipeInputField = document.querySelector("#recipeInputField");
+    if (recipeInputField.value !== "") {
       axios
-        .post("https://garifunamusic.herokuapp.com/Music", {
-          artistName,
-          title,
-          genre,
-          label,
-          producer,
-          year,
-          tracks,
-          artwork,
+        .post("https://yurumeiapi.herokuapp.com/Recipe", {
+          recipeName,
+          description,
+          photo,
+          servings,
+          ingredients,
+          steps,
+          author
         })
         .then(function (response) {
           // alert("Seremein (Thanks) for adding to our libary.");
           console.log(response);
-          setSucess(true);
+          setSuccess(true);
         });
     }
   };
 
   return (
     <div>
-      {sucess === false ? (
+      {success === false ? (
         <form className="needs-validation">
           <div className="form-group">
-            <label for="artistInputField">Artist Name</label>
+            <label for="recipeInputField">Recipe</label>
             <input
               type="text"
               className="form-control"
-              id="artistInputField"
-              // aria-describedby="emailHelp"
-              onChange={(event) => setArtistName(event.target.value)}
+              id="recipeInputField"
+              onChange={(event) => setRecipeName(event.target.value)}
               required
             />
             {/* <div className="invalid-feedback">Please create an artist.</div> */}
@@ -57,66 +55,81 @@ function CreateMusic() {
           </div>
 
           <div className="form-group">
-            <label for="exampleInputEmail1">Album/Track Title</label>
+            <label for="exampleInputEmail1">Recipe Description</label>
             <input
               type="text"
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              onChange={(event) => setTitle(event.target.value)}
+              onChange={(event) => setDescription(event.target.value)}
             />
             <small id="emailHelp" className="form-text text-muted"></small>
           </div>
 
           <div className="form-group">
-            <label for="exampleFormControlSelect1">Genre</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <label for="exampleFormControlSelect1">Photo</label>
+            <input
+              type="text"
+              className="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              onChange={(event) => setPhoto(event.target.value)}
+            />
+            <small id="emailHelp" className="form-text text-muted">
+              Please enter link to recipe photo (jpeg/png)
+            </small>
+          </div>
+
+          <div className="form-group">
+            <label for="exampleInputEmail1">Servings</label>
+            <select
+              class="form-control"
+              id="exampleFormControlSelect1"
+              onChange={(event) => setServings(event.target.value)}
+            >
               <option></option>
-              <option>Paranda</option>
-              <option>Hugu Hugu</option>
-              <option>Punta</option>
+              <option>1 serving</option>
+              <option>2 servings</option>
+              <option>3 servings</option>
+              <option>4 servings</option>
+              <option>5 servings</option>
+              <option>6 servings</option>
+              <option>7 servings</option>
+              <option>8 servings</option>
+              <option>9 servings</option>
+              <option>10 servings</option>
             </select>
           </div>
 
           <div className="form-group">
-            <label for="exampleInputEmail1">Year</label>
-            <input
-              type="text"
-              className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              onChange={(event) => setYear(event.target.value)}
-            />
-            <small id="emailHelp" className="form-text text-muted"></small>
+            <label for="exampleInputEmail1">Ingredients</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              onChange={(event) => setIngredients(event.target.value)}
+            ></textarea>
           </div>
 
           <div className="form-group">
-            <label for="exampleInputEmail1">Streaming Link</label>
-            <input
-              type="text"
-              className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              onChange={(event) => setLabel(event.target.value)}
-            />
-            <small id="emailHelp" className="form-text text-muted">
-              Please insert link to streaming site (ie Spotify, SoundCloud,
-              AppleMusic etc)
-            </small>
+            <label for="exampleInputEmail1">Directions</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              onChange={(event) => setSteps(event.target.value)}
+            ></textarea>
           </div>
 
           <div className="form-group">
-            <label for="exampleInputEmail1">Album Artwork</label>
+            <label for="exampleFormControlSelect1">Author</label>
             <input
               type="text"
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              onChange={(event) => setAlbumArtwork(event.target.value)}
+              onChange={(event) => setAuthor(event.target.value)}
             />
-            <small id="emailHelp" className="form-text text-muted">
-              Please paste link to album jpeg/png
-            </small>
           </div>
 
           <div className="form-group form-check">
@@ -126,7 +139,7 @@ function CreateMusic() {
               id="exampleCheck1"
             />
             <label className="form-check-label" for="exampleCheck1">
-              Add album
+              Add recipe
             </label>
           </div>
           <button
@@ -138,7 +151,7 @@ function CreateMusic() {
           </button>
         </form>
       ) : (
-        <Redirect to="/capstone" />
+        <Redirect to="/food" />
       )}
     </div>
   );
