@@ -1,8 +1,11 @@
 import React from "react";
 import "./HomePage.css";
 import Navbar from "../Navbar/Navbar";
-import Slide2 from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/garifunaboys.jpg";
+import Slide1 from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/Yurumein-2017_28.jpg";
+import Slide2 from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/garifunagirls.jpg";
 import Slide3 from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/hudut.jpg";
+import Slide4 from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/jankunu.jpg";
+import Slide5 from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/dangriga.jpg";
 import Slide6 from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/soup.jpg";
 import History from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/history.png";
 import Food from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/food.jpg";
@@ -31,6 +34,18 @@ function HomePage() {
             <img
               className="bd-placeholder-img"
               style={{ maxWidth: "100%", maxHeight: "565px" }}
+              src={Slide1}
+              preserveAspectRatio="xMidYMid slice"
+              alt=""
+              // focusable="false"
+              // role="img"
+            />
+          </div>
+
+          <div className="carousel-item">
+            <img
+              className="bd-placeholder-img"
+              style={{ maxWidth: "100%", maxHeight: "565px" }}
               src={Slide2}
               preserveAspectRatio="xMidYMid slice"
               alt=""
@@ -44,6 +59,26 @@ function HomePage() {
               className="bd-placeholder-img"
               style={{ maxWidth: "100%", height: "565px" }}
               src={Slide3}
+              preserveAspectRatio="xMidYMid slice"
+              alt=""
+            />
+          </div>
+
+          <div className="carousel-item">
+            <img
+              className="bd-placeholder-img"
+              style={{ maxWidth: "100%", height: "565px" }}
+              src={Slide4}
+              preserveAspectRatio="xMidYMid slice"
+              alt=""
+            />
+          </div>
+
+          <div className="carousel-item">
+            <img
+              className="bd-placeholder-img"
+              style={{ maxWidth: "100%", height: "565px" }}
+              src={Slide5}
               preserveAspectRatio="xMidYMid slice"
               alt=""
             />

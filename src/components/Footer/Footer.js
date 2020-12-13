@@ -13,6 +13,9 @@ function Footer() {
                 <h4>YURUMEI</h4>
               </a>
               <ul className="list-unstyled">
+                <a href="/home">
+                  <li>Home</li>
+                </a>
                 <a href="/history">
                   <li>History</li>
                 </a>

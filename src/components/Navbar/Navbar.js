@@ -85,6 +85,12 @@ const style = {
           {anchor === "left" ? (
             <div>
               <Link
+                to="/home"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <h4>Home</h4>
+              </Link>
+              <Link
                 to="/history"
                 style={{ textDecoration: "none", color: "black" }}
               >
