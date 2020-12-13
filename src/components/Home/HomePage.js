@@ -106,7 +106,7 @@ function HomePage() {
               mostly in coastal towns and villages in the Central American
               countries of Belize, Guatemala, Honduras and Nicaragua.
             </p>
-            <a href="/history" className="featureLink">
+            <a href="/history" style={{ color: "black" }}>
               <small>learn more</small>
             </a>
           </div>
@@ -140,7 +140,7 @@ function HomePage() {
               European languages because of an extremely tumultuous past
               involving warfare, migration and colonization.
             </p>
-            <a href="/language" className="featureLink">
+            <a href="/language" style={{ color: "black" }}>
               <small>learn more</small>
             </a>
           </div>
@@ -169,7 +169,7 @@ function HomePage() {
               cassava to the Garifuna people, as the yellow stripe represents
               the color of cassava bread; "ereba" in the Garifuna language.
             </p>
-            <a href="/food" className="featureLink">
+            <a href="/food" style={{ color: "black" }}>
               <small>learn more</small>
             </a>
           </div>
@@ -189,8 +189,7 @@ function HomePage() {
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
             <h2 class="featurette-heading">
-              Music{" "}
-              {/* <span class="text-muted">See for yourself.</span> */}
+              Music {/* <span class="text-muted">See for yourself.</span> */}
             </h2>
             <p class="lead">
               Garifuna music is an ethnic music and dance with African and
@@ -213,7 +212,7 @@ function HomePage() {
               Masterpiece of the Oral and Intangible Heritage of Humanity by
               UNESCO.
             </p>
-            <a href="/music" className="featureLink">
+            <a href="/music" style={{ color: "black" }}>
               <small>learn more</small>
             </a>
           </div>
@@ -240,7 +239,7 @@ function HomePage() {
               Our community forum is a greate place to learn, share and keep the
               Garifuna culture and traditions alive.
             </p>
-            <a href="/forum" className="featureLink">
+            <a href="/forum" style={{ color: "black" }}>
               <small>learn more</small>
             </a>
           </div>
