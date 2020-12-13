@@ -1,18 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import axios from "axios";
-import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-// import { Navbar } from "react-bootstrap";
-// import Link from "@material-ui/core/Link";
 import Navbar from "../Navbar/Navbar";
 
 function Food(props) {
@@ -57,10 +48,6 @@ function Food(props) {
     cardContent: {
       height: "150px",
     },
-    footer: {
-      backgroundColor: theme.palette.background.paper,
-      padding: theme.spacing(6),
-    },
 
     recipeCard: {
       margin: "auto 0",
@@ -70,16 +57,30 @@ function Food(props) {
     },
     header: {
       height: "500px",
-
-      // border: "1px solid red",
-      // width: "100vw",
     },
   }));
 
-  const cards = [1];
-
   const classes = useStyles();
 
+// Recipe Search
+const [recipe, setRecipe] = useState([{}]);
+const [recipeSearch, setRecipeSearch] = useState("");
+const [filteredRecipeList, setFilteredRecipeList] = useState([]);
+
+const searchRecipe = (e) => {
+    e.preventDefault();
+    // console.log(e.target.value);
+    setRecipeSearch(e.target.value.toLowerCase());
+    if (recipeSearch.length > 1) {
+      let newRecipeArr = recipe.filter((input) =>
+        input.recipeName.toLowerCase().includes(recipeSearch)
+      );
+      // console.log(newRecipeArr);
+      setFilteredRecipeList(newRecipeArr);
+    }; 
+}
+
+// Place data from API in cards
   let recipeList = props.recipeList.map((recipe, i) => {
     return (
       // card container
@@ -126,7 +127,7 @@ function Food(props) {
     );
   });
 
-  let filteredRecipeList = props.filteredRecipeList.map((recipe, i) => {
+  let recipeListFiltered = props.filteredRecipeList.map((recipe, i) => {
     return (
       // card container
       <div
@@ -218,8 +219,8 @@ function Food(props) {
                     placeholder="Enter Name of Dish"
                     style={{ border: "1px solid black" }}
                     // aria-label="Search"
-                    // value={recipeSearch}
-                    // onChange={searchRecipe}
+                    value={recipeSearch}
+                    onChange={searchRecipe}
                   />
 
                   <button
@@ -229,10 +230,11 @@ function Food(props) {
                       backgroundColor: "#FFD800",
                     }}
                     type="submit"
-                    // onClick={() => searchRecipe()}
+                    onClick={() => searchRecipe()}
                   >
                     Search
                   </button>
+
                   <Link to="/addrecipe">
                     <button
                       className="btn my-2 my-lg-0 form-inline"
@@ -242,31 +244,15 @@ function Food(props) {
                         marginLeft: "10px",
                       }}
                       type="submit"
-                      // onClick={() => searchRecipe()}
                     >
                       Add Recipe
                     </button>
                   </Link>
                 </form>
-
-                {/* <Button variant="contained" color="yellow">
-                  Eventually a form to search recipe by name
-                  
-                  SEARCH FORM
-                </Button> */}
               </Grid>
             </Grid>
           </div>
         </Container>
-
-        {/* <Grid
-          container
-          spacing={5}
-          alignItems="center"
-          className={classes.recipeCard}
-        >
-          {props.recipeSearch.length > 1 ? filteredRecipeList : recipeList}
-        </Grid> */}
       </div>
       <div
         style={{
@@ -277,10 +263,8 @@ function Food(props) {
           gridGap: "1rem",
         }}
       >
-        {props.recipeSearch.length > 1 ? filteredRecipeList : recipeList}
+        {props.recipeSearch.length > 1 ? recipeListFiltered : recipeList}
       </div>
-
-      {/* <div>// the container with grids</div> */}
     </div>
   );
 }
