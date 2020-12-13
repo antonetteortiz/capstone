@@ -19,191 +19,181 @@ function HomePage() {
   return (
     <div>
       <Navbar />
-      <Carousel className="carousel">
-        {/* <Carousel.Item>
-          <img classNameName="d-block w-100 carousel-image" src={Slide1} alt="First slide" />
-        </Carousel.Item> */}
-
-        {/* <Carousel.Item>
-          <img classNameName="d-block w-100 carousel-image" src={Slide2} alt="Third slide" />
-        </Carousel.Item> */}
-
-        <Carousel.Item>
-          <img
-            className="d-block w-100 carousel-image"
-            src={Slide3}
-            alt="Third slide"
-          />
-        </Carousel.Item>
-
-        {/* <Carousel.Item>
-          <img classNameName="d-block w-100 carousel-image" src={Slide4} alt="Third slide" />
-        </Carousel.Item> */}
-
-        {/* <Carousel.Item>
-          <img classNameName="d-block w-100 carousel-image" src={Slide5} alt="Third slide" />
-        </Carousel.Item> */}
-
-        <Carousel.Item>
-          <img
-            className="d-block w-100 carousel-image"
-            src={Slide6}
-            alt="Third slide"
-          />
-        </Carousel.Item>
-
-        {/* <Carousel.Item>
-          <img classNameName="d-block w-100 carousel-image" src={Slide7} alt="Third slide" />
-        </Carousel.Item> */}
-      </Carousel>
-
-      <div className="container">
-        <div className="colum">
-          <h2>History</h2>
-          <div>
-            <p>
-              The Afro-Caribbean Garifuna people originated with the arrival of
-              West African slaves who washed ashore on the Caribbean island of
-              St. Vincent around 1635 while likely on their way to New World
-              mines and plantations. Today, the global population of Garifunas
-              stands at upwards of 300,000 people, many of whom live in the U.S.
-              and Canada. Garifuna communities along the Caribbean Sea live
-              mostly in coastal towns and villages in the Central American
-              countries of Belize, Guatemala, Honduras and Nicaragua.
-            </p>
+      {/* Carousel */}
+      <div id="myCarousel" className="carousel slide" data-ride="carousel">
+        <ol className="carousel-indicators">
+          <li
+            data-target="#myCarousel"
+            data-slide-to="0"
+            className="active"
+          ></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img
+              className="bd-placeholder-img"
+              style={{ maxWidth: "100%", maxHeight: "565px" }}
+              src={Slide2}
+              preserveAspectRatio="xMidYMid slice"
+              // focusable="false"
+              // role="img"
+            />
           </div>
-          <div>
-            <a href="/history">
-              <p>learn more</p>
-            </a>
+
+          <div className="carousel-item">
+            <img
+              className="bd-placeholder-img"
+              style={{ maxWidth: "100%", height: "565px" }}
+              src={Slide3}
+              preserveAspectRatio="xMidYMid slice"
+            />
+          </div>
+
+          <div className="carousel-item">
+            <img
+              className="bd-placeholder-img"
+              style={{ maxWidth: "100%", maxHeight: "565px" }}
+              src={Slide6}
+              preserveAspectRatio="xMidYMid slice"
+            />
           </div>
         </div>
-        <div className="image">
-          <img src={History} />
+
+        <a
+          className="carousel-control-prev"
+          href="#myCarousel"
+          role="button"
+          data-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="sr-only">Previous</span>
+        </a>
+        <a
+          className="carousel-control-next"
+          href="#myCarousel"
+          role="button"
+          data-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="sr-only">Next</span>
+        </a>
+      </div>
+
+      {/* Features */}
+
+      <hr class="featurette-divider" />
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">
+            First featurette heading.{" "}
+            <span class="text-muted">It’ll blow your mind.</span>
+          </h2>
+          <p class="lead">
+            Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
+            ligula porta felis euismod semper. Praesent commodo cursus magna,
+            vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+            commodo.
+          </p>
+        </div>
+        <div class="col-md-5">
+          <svg
+            class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            width="500"
+            height="500"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+            role="img"
+            aria-label="Placeholder: 500x500"
+          >
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#eee" />
+            <text x="50%" y="50%" fill="#aaa" dy=".3em">
+              500x500
+            </text>
+          </svg>
         </div>
       </div>
 
-      <div className="container">
-        <div className="colum">
-          <h2>Language</h2>
-          <div>
-            <p>
-              Garifuna is a minority language widely spoken in villages of
-              Garifuna people in the western part of the northern coast of
-              Central America. It is a member of the Arawakan language family
-              but an atypical one since it is spoken outside the Arawakan
-              language area, which is otherwise now confined to the northern
-              parts of South America, and because it contains an unusually high
-              number of loanwords, from both Carib languages and a number of
-              European languages because of an extremely tumultuous past
-              involving warfare, migration and colonization.
-              <br />
-              <br />
-              The language was once confined to the Antillean islands of St.
-              Vincent and Dominica, but its speakers, the Garifuna people, were
-              deported en masse by the British in 1797 to the north coast of
-              Honduras from where the language and Garifuna people has since
-              spread along the coast south to Nicaragua and north to Guatemala
-              and Belize. Parts of Garifuna vocabulary are split between men's
-              speech and women's speech, and some concepts have two words to
-              express them, one for women and one for men. Moreover, the terms
-              used by men are generally loanwords from Carib while those used by
-              women are Arawak. The Garifuna language was declared a Masterpiece
-              of the Oral and Intangible Heritage of Humanity in 2008 along with
-              Garifuna music and dance.
-              <small>Source Wikipedia</small>
-            </p>
-          </div>
-          <div>
-            <a href="/language">
-              <p>learn more</p>
-            </a>
-          </div>
+      <hr class="featurette-divider" />
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">
+            Oh yeah, it’s that good.{" "}
+            <span class="text-muted">See for yourself.</span>
+          </h2>
+          <p class="lead">
+            Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
+            ligula porta felis euismod semper. Praesent commodo cursus magna,
+            vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+            commodo.
+          </p>
         </div>
-        <div className="image">
-          <img src={Language} />
+        <div class="col-md-5 order-md-1">
+          <svg
+            class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            width="500"
+            height="500"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+            role="img"
+            aria-label="Placeholder: 500x500"
+          >
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#eee" />
+            <text x="50%" y="50%" fill="#aaa" dy=".3em">
+              500x500
+            </text>
+          </svg>
         </div>
       </div>
 
-      <div className="container">
-        <div className="colum">
-          <h2>Food</h2>
-          <div>
-            <p>
-              Garifuna food is traditionally based on the staple foods of
-              cassava, plantain and banana, combined with fish and other
-              seafood. The colors of the Garifuna flag reflect the importance of
-              cassava to the Garifuna people, as the yellow stripe represents
-              the color of cassava bread; “ereba” in the Garifuna language.
-            </p>
-          </div>
-          <div>
-            <a href="/food">
-              <p>learn more</p>
-            </a>
-          </div>
+      <hr class="featurette-divider" />
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">
+            And lastly, this one. <span class="text-muted">Checkmate.</span>
+          </h2>
+          <p class="lead">
+            Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
+            ligula porta felis euismod semper. Praesent commodo cursus magna,
+            vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+            commodo.
+          </p>
         </div>
-        <div className="image">
-          <img src={Food} />
+        <div class="col-md-5">
+          <svg
+            class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            width="500"
+            height="500"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+            role="img"
+            aria-label="Placeholder: 500x500"
+          >
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#eee" />
+            <text x="50%" y="50%" fill="#aaa" dy=".3em">
+              500x500
+            </text>
+          </svg>
         </div>
       </div>
 
-      <div className="container">
-        <div className="colum">
-          <h2>Music</h2>
-          <div>
-            <p>
-              Garifuna music is an ethnic music and dance with African and
-              Arawak elements, originated by an Afro Indigenous group known as
-              the Garifuna people, pre to their exile to Central America from
-              Saint Vincent And The Grenadines. It represents and belongs to the
-              Garifuna community. Garifuna music and dance are closely related.
-              The main traditional instruments are drums and maracas.
-              <br />
-              <br />
-              Drums play an important role in Garifuna music. The main drum is
-              the Segunda (bass drum). The drums are normally made by hollowing
-              out logs and stretching antelope skin over them. There are certain
-              types of songs that are associated with work, some with play, some
-              with dance and some that are reserved for prayer or ritual use.
-              Two main Garifuna genres are punta and paranda.
-              <br />
-              <br />
-              In 2001, Garifuna music, dance, and language was proclaimed as a
-              Masterpiece of the Oral and Intangible Heritage of Humanity by
-              UNESCO.
-            </p>
-          </div>
-          <div>
-            <a href="/music">
-              <p>learn more</p>
-            </a>
-          </div>
-        </div>
-        <div className="image">
-          <img src={Music} />
-        </div>
-      </div>
-
-      <div className="container">
-        <div className="colum">
-          <h2>Forum</h2>
-          <div>
-            <p>
-              Our community forum is a greate place to learn, share and keep the
-              Garifuna culture and traditions alive.
-            </p>
-          </div>
-          <div>
-            <a href="/forum">
-              <p>learn more</p>
-            </a>
-          </div>
-        </div>
-        <div className="image">
-          <img src={Forum} />
-        </div>
-      </div>
+      <hr class="featurette-divider" />
     </div>
   );
 }

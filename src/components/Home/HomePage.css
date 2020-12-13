@@ -4,9 +4,30 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+      }
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+  font-size: 3.5rem;
+}
+}
+
 .carousel {
+    margin-bottom: 4rem;
+    position: relative;
+    height: 500px;
+}
+
+
+/* .carousel {
   max-width: 100vw;
-  /* max-height: 250px; */
   height: 550px;
 }
 
@@ -67,4 +88,4 @@ body {
   padding: 5px;
   width: 1200px;
   height: 800px;
-}
+} */
