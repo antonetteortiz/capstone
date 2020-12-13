@@ -87,136 +87,176 @@ function HomePage() {
       </div>
 
       {/* Features */}
+      <div className="featureContainer">
+        <hr class="featurette-divider" />
 
-      <hr class="featurette-divider" />
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">
+              History of the Garifuna's{" "}
+              {/* <span class="text-muted">It’ll blow your mind.</span> */}
+            </h2>
+            <p class="lead">
+              The Afro-Caribbean Garifuna people originated with the arrival of
+              West African slaves who washed ashore on the Caribbean island of
+              St. Vincent around 1635 while likely on their way to New World
+              mines and plantations. Today, the global population of Garifunas
+              stands at upwards of 300,000 people, many of whom live in the U.S.
+              and Canada. Garifuna communities along the Caribbean Sea live
+              mostly in coastal towns and villages in the Central American
+              countries of Belize, Guatemala, Honduras and Nicaragua.
+            </p>
+            <a href="/history" className="featureLink">
+              <small>learn more</small>
+            </a>
+          </div>
+          <div class="col-md-5">
+            <img
+              classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              style={{ width: "600px", height: "500px" }}
+              src={History}
+              preserveAspectRatio="xMidYMid slice"
+              alt=""
+            />
+          </div>
+        </div>
 
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">
-            First featurette heading.{" "}
-            <span class="text-muted">It’ll blow your mind.</span>
-          </h2>
-          <p class="lead">
-            Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
-            ligula porta felis euismod semper. Praesent commodo cursus magna,
-            vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-            commodo.
-          </p>
+        <hr class="featurette-divider" />
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">
+              Garifuna Language{" "}
+              <span class="text-muted">See for yourself.</span>
+            </h2>
+            <p class="lead">
+              Garifuna is a minority language widely spoken in villages of
+              Garifuna people in the western part of the northern coast of
+              Central America. It is a member of the Arawakan language family
+              but an atypical one since it is spoken outside the Arawakan
+              language area, which is otherwise now confined to the northern
+              parts of South America, and because it contains an unusually high
+              number of loanwords, from both Carib languages and a number of
+              European languages because of an extremely tumultuous past
+              involving warfare, migration and colonization.
+            </p>
+            <a href="/language" className="featureLink">
+              <small>learn more</small>
+            </a>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img
+              classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              style={{ width: "600px", height: "500px" }}
+              src={Language}
+              preserveAspectRatio="xMidYMid slice"
+              alt=""
+            />
+          </div>
         </div>
-        <div class="col-md-5">
-          <img
-            classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-            style={{ width: "700px", height: "500px" }}
-            src={History}
-            preserveAspectRatio="xMidYMid slice"
-            alt=""
-          />
+
+        <hr class="featurette-divider" />
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">
+              Food <span class="text-muted">Checkmate.</span>
+            </h2>
+            <p class="lead">
+              Garifuna food is traditionally based on the staple foods of
+              cassava, plantain and banana, combined with fish and other
+              seafood. The colors of the Garifuna flag reflect the importance of
+              cassava to the Garifuna people, as the yellow stripe represents
+              the color of cassava bread; "ereba" in the Garifuna language.
+            </p>
+            <a href="/food" className="featureLink">
+              <small>learn more</small>
+            </a>
+          </div>
+          <div class="col-md-5">
+            <img
+              classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              style={{ width: "600px", height: "500px" }}
+              src={Food}
+              preserveAspectRatio="xMidYMid slice"
+              alt=""
+            />
+          </div>
         </div>
+
+        <hr class="featurette-divider" />
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">
+              Music{" "}
+              {/* <span class="text-muted">See for yourself.</span> */}
+            </h2>
+            <p class="lead">
+              Garifuna music is an ethnic music and dance with African and
+              Arawak elements, originated by an Afro Indigenous group known as
+              the Garifuna people, pre to their exile to Central America from
+              Saint Vincent And The Grenadines. It represents and belongs to the
+              Garifuna community. Garifuna music and dance are closely related.
+              The main traditional instruments are drums and maracas.
+              <br />
+              <br />
+              Drums play an important role in Garifuna music. The main drum is
+              the Segunda (bass drum). The drums are normally made by hollowing
+              out logs and stretching antelope skin over them. There are certain
+              types of songs that are associated with work, some with play, some
+              with dance and some that are reserved for prayer or ritual use.
+              Two main Garifuna genres are punta and paranda.
+              <br />
+              <br />
+              In 2001, Garifuna music, dance, and language was proclaimed as a
+              Masterpiece of the Oral and Intangible Heritage of Humanity by
+              UNESCO.
+            </p>
+            <a href="/music" className="featureLink">
+              <small>learn more</small>
+            </a>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img
+              classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              style={{ width: "600px", height: "500px" }}
+              src={Music}
+              preserveAspectRatio="xMidYMid slice"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <hr class="featurette-divider" />
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">
+              Forum
+              {/* <span class="text-muted">Checkmate.</span> */}
+            </h2>
+            <p class="lead">
+              Our community forum is a greate place to learn, share and keep the
+              Garifuna culture and traditions alive.
+            </p>
+            <a href="/forum" className="featureLink">
+              <small>learn more</small>
+            </a>
+          </div>
+          <div class="col-md-5">
+            <img
+              classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              style={{ width: "600px", height: "500px" }}
+              src={Forum}
+              preserveAspectRatio="xMidYMid slice"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <hr class="featurette-divider" />
       </div>
-
-      <hr class="featurette-divider" />
-
-      <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading">
-            Oh yeah, it’s that good.{" "}
-            <span class="text-muted">See for yourself.</span>
-          </h2>
-          <p class="lead">
-            Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
-            ligula porta felis euismod semper. Praesent commodo cursus magna,
-            vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-            commodo.
-          </p>
-        </div>
-        <div class="col-md-5 order-md-1">
-          <img
-            classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-            style={{ width: "700px", height: "500px" }}
-            src={Language}
-            preserveAspectRatio="xMidYMid slice"
-            alt=""
-          />
-        </div>
-      </div>
-
-      <hr class="featurette-divider" />
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">
-            And lastly, this one. <span class="text-muted">Checkmate.</span>
-          </h2>
-          <p class="lead">
-            Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
-            ligula porta felis euismod semper. Praesent commodo cursus magna,
-            vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-            commodo.
-          </p>
-        </div>
-        <div class="col-md-5">
-          <img
-            classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-            style={{ width: "700px", height: "500px" }}
-            src={Food}
-            preserveAspectRatio="xMidYMid slice"
-            alt=""
-          />
-        </div>
-      </div>
-
-      <hr class="featurette-divider" />
-
-      <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading">
-            Oh yeah, it’s that good.{" "}
-            <span class="text-muted">See for yourself.</span>
-          </h2>
-          <p class="lead">
-            Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
-            ligula porta felis euismod semper. Praesent commodo cursus magna,
-            vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-            commodo.
-          </p>
-        </div>
-        <div class="col-md-5 order-md-1">
-          <img
-            classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-            style={{ width: "700px", height: "500px" }}
-            src={Music}
-            preserveAspectRatio="xMidYMid slice"
-            alt=""
-          />
-        </div>
-      </div>
-
-      <hr class="featurette-divider" />
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">
-            And lastly, this one. <span class="text-muted">Checkmate.</span>
-          </h2>
-          <p class="lead">
-            Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
-            ligula porta felis euismod semper. Praesent commodo cursus magna,
-            vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-            commodo.
-          </p>
-        </div>
-        <div class="col-md-5">
-          <img
-            classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-            style={{ width: "700px", height: "500px" }}
-            src={Forum}
-            preserveAspectRatio="xMidYMid slice"
-            alt=""
-          />
-        </div>
-      </div>
-
-      <hr class="featurette-divider" />
     </div>
   );
 }
