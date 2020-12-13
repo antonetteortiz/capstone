@@ -90,7 +90,7 @@ function Food(props) {
           width: "475px",
           height: "600px",
           display: "flex",
-          flexDirection: 'column',
+          flexDirection: "column",
         }}
       >
         {/* image container */}
@@ -100,15 +100,15 @@ function Food(props) {
         {/* image container END */}
 
         {/* name/description */}
-        <div style={{paddingTop: "20px"}}>
-          <h4>{recipe.name}</h4>
-          <p>{recipe.description}</p>
+        <div style={{ paddingTop: "20px" }}>
+          <h4>{recipe.recipeName}</h4>
+          <div style={{ borderTop: "1px solid #FFD800"}}>
+            <p style={{paddingTop: "10px"}}>{recipe.description}</p>
+          </div>
         </div>
 
         {/* action container */}
-        <div
-          style={{ display: "flex", margin: "1rem" }}
-        >
+        <div style={{ display: "flex", margin: "1rem" }}>
           <button
             style={{
               outline: "none",

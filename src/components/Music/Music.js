@@ -5,21 +5,6 @@ import "./Music.css";
 import Navbar from "../Navbar/Navbar";
 
 function Music(props) {
-  const remove = (artistName) => {
-    let encodedArtistName = encodeURI(artistName);
-    axios
-      .delete(
-        `https://garifunamusic.herokuapp.com/Music/${encodedArtistName}`,
-        {
-          artistName,
-        }
-      )
-      .then(function (response) {
-        alert("Artist has been deleted!");
-        console.log(response);
-      });
-  };
-
   let musicList = props.musicList.map((album, i) => {
     return (
       <div className="col mb-4 mainBody">
@@ -27,19 +12,12 @@ function Music(props) {
           <img src={album.artwork} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{album.title}</h5>
-            <p className="card-text">{album.artistName}</p>
-            {/* <a className="btn btn-primary" href={`/updatemusic/${encodeURI(album.artistName)}`}>
-              Update
-            </a> */}
-            <Link to={`/updatemusic/${encodeURI(album.artistName)}`}>
-              Update
-            </Link>
-            <a
-              className="btn btn-primary"
-              onClick={() => remove(album.artistName)}
-            >
-              Delete
+            <h6 className="card-text">{album.artistName}</h6>
+            <a href={album.link}>
+              <p>Listen here</p>
             </a>
+            
+
           </div>
         </div>
       </div>
@@ -54,17 +32,8 @@ function Music(props) {
           <div className="card-body">
             <h5 className="card-title">{album.title}</h5>
             <p className="card-text">{album.artistName}</p>
-            {/* <a className="btn btn-primary" href={`/updatemusic/${encodeURI(album.artistName)}`}>
-              Update
-            </a> */}
-            <Link to={`/updatemusic/${encodeURI(album.artistName)}`}>
-              Update
-            </Link>
-            <a
-              className="btn btn-primary"
-              onClick={() => remove(album.artistName)}
-            >
-              Delete
+            <a href={album.link}>
+              <p>Listen here</p>
             </a>
           </div>
         </div>
