@@ -13,7 +13,6 @@ import Language from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/
 import Music from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/music.jpg";
 import Forum from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/forum.png";
 
-
 function HomePage() {
   return (
     <div>
@@ -29,16 +28,19 @@ function HomePage() {
           <li data-target="#myCarousel" data-slide-to="1"></li>
           <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
+
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
               className="bd-placeholder-img"
-              style={{ maxWidth: "100%", maxHeight: "565px" }}
+              style={{
+                maxWidth: "100%",
+                maxHeight: "565px",
+                border: "2px solid black",
+              }}
               src={Slide1}
               preserveAspectRatio="xMidYMid slice"
               alt=""
-              // focusable="false"
-              // role="img"
             />
           </div>
 
@@ -49,8 +51,6 @@ function HomePage() {
               src={Slide2}
               preserveAspectRatio="xMidYMid slice"
               alt=""
-              // focusable="false"
-              // role="img"
             />
           </div>
 
