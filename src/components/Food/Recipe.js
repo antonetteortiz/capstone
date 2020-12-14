@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
 import { useParams } from "react-router-dom";
 
 function RecipePage(props) {

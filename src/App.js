@@ -30,21 +30,21 @@ function App() {
     //Argument passed here is saying everytime our argument changes the API will be called.
   }, [music]);
 
-  const searchArtist = (e) => {
-    e.preventDefault();
-    // console.log(e.target.value);
-    setArtistSearch(e.target.value.toLowerCase());
+  // const searchArtist = (e) => {
+  //   e.preventDefault();
+  //   // console.log(e.target.value);
+  //   setArtistSearch(e.target.value.toLowerCase());
 
-    // console.log("state", artistSearch)
+  //   // console.log("state", artistSearch)
 
-    if (artistSearch.length > 1) {
-      // console.log("!!!", music)
-      let newArtistArr = music.filter((input) =>
-        input.artistName.toLowerCase().includes(artistSearch)
-      );
-      console.log(newArtistArr);
-      setFilteredList(newArtistArr);
-    }
+  //   if (artistSearch.length > 1) {
+  //     // console.log("!!!", music)
+  //     let newArtistArr = music.filter((input) =>
+  //       input.artistName.toLowerCase().includes(artistSearch)
+  //     );
+  //     console.log(newArtistArr);
+  //     setFilteredList(newArtistArr);
+  //   }
 
     // let apiUrl = "https://garifunamusic.herokuapp.com/Music";
     // fetch(apiUrl)
@@ -68,21 +68,21 @@ function App() {
     //Argument passed here is saying everytime our argument changes the API will be called.
   }, [recipe]);
 
-  const searchRecipe = (e) => {
-    e.preventDefault();
-    // console.log(e.target.value);
-    setRecipeSearch(e.target.value.toLowerCase());
+  // const searchRecipe = (e) => {
+  //   e.preventDefault();
+  //   // console.log(e.target.value);
+  //   setRecipeSearch(e.target.value.toLowerCase());
 
-    // console.log("state", recipeSearch)
+  //   // console.log("state", recipeSearch)
 
-    if (recipeSearch.length > 1) {
-      // console.log("!!!", recipe)
-      let newRecipeArr = recipe.filter((input) =>
-        input.recipeName.toLowerCase().includes(recipeSearch)
-      );
-      console.log(newRecipeArr);
-      setFilteredRecipeList(newRecipeArr);
-    }
+  //   if (recipeSearch.length > 1) {
+  //     // console.log("!!!", recipe)
+  //     let newRecipeArr = recipe.filter((input) =>
+  //       input.recipeName.toLowerCase().includes(recipeSearch)
+  //     );
+  //     console.log(newRecipeArr);
+  //     setFilteredRecipeList(newRecipeArr);
+  //   }
 
     // let apiUrl = "https://yurumeiapi.herokuapp.com/Recipe";
     // fetch(apiUrl)

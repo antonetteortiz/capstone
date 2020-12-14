@@ -35,7 +35,7 @@ function Food(props) {
     },
     card: {
       height: "150%",
-      margin: "0 auto",
+      // margin: "0 auto",
       width: "30%",
       display: "flex",
       flexDirection: "column",
@@ -96,7 +96,7 @@ const searchRecipe = (e) => {
       >
         {/* image container */}
         <div>
-          <img style={{ width: "475px", height: "356px" }} src={recipe.photo} />
+          <img style={{ width: "475px", height: "356px" }} src={recipe.photo} alt="" />
         </div>
         {/* image container END */}
 
@@ -142,7 +142,7 @@ const searchRecipe = (e) => {
       >
         {/* image container */}
         <div>
-          <img style={{ width: "475px", height: "356px" }} src={recipe.photo} />
+          <img style={{ width: "475px", height: "356px" }} src={recipe.photo} alt=""/>
         </div>
         {/* image container END */}
 

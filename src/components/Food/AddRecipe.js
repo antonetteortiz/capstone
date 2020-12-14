@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 
-function CreateMusic() {
-  console.log("Create Music")
+function CreateRecipe() {
+  console.log("Create Recipe")
   const [recipeName, setRecipeName] = useState();
   const [description, setDescription] = useState();
   const [photo, setPhoto] = useState();
@@ -11,7 +11,6 @@ function CreateMusic() {
   const [ingredients, setIngredients] = useState();
   const [steps, setSteps] = useState();
   const [author, setAuthor] = useState();
-  const [artwork, setAlbumArtwork] = useState();
   const [success, setSuccess] = useState(false);
 
   const submitToApi = (e) => {
@@ -183,4 +182,4 @@ function CreateMusic() {
   );
 })();
 
-export default CreateMusic;
+export default CreateRecipe;

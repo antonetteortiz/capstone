@@ -1,17 +1,17 @@
 import React from "react";
 import "./HomePage.css";
 import Navbar from "../Navbar/Navbar";
-import Slide1 from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/Yurumein-2017_28.jpg";
-import Slide2 from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/garifunagirls.jpg";
-import Slide3 from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/hudut.jpg";
-import Slide4 from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/jankunu.jpg";
-import Slide5 from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/dangriga.jpg";
-import Slide6 from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/soup.jpg";
-import History from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/history.png";
-import Food from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/food.jpg";
-import Language from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/yurumeilanguage.jpg";
-import Music from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/music.jpg";
-import Forum from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/images/forum.png";
+import Slide1 from "../../images/Yurumein-2017_28.jpg";
+import Slide2 from "../../images/garifunagirls.jpg";
+import Slide3 from "../../images/hudut.jpg";
+import Slide4 from "../../images/jankunu.jpg";
+import Slide5 from "../../images/dangriga.jpg";
+import Slide6 from "../../images/soup.jpg";
+import History from "../../images/history.png";
+import Food from "../../images/food.jpg";
+import Language from "../../images/yurumeilanguage.jpg";
+import Music from "../../images/music.jpg";
+import Forum from "../../images/forum.png";
 
 function HomePage() {
   return (

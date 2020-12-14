@@ -8,9 +8,7 @@ function CreateMusic() {
   const [title, setTitle] = useState();
   const [genre, setGenre] = useState();
   const [label, setLabel] = useState();
-  const [producer, setProducer] = useState();
   const [year, setYear] = useState();
-  const [tracks, setTrackList] = useState();
   const [artwork, setAlbumArtwork] = useState();
   const [sucess, setSucess] = useState(false);
 

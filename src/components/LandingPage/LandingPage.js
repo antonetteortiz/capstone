@@ -1,14 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./LandingPage.css";
-import Music from "/Users/antonetteortiz/Desktop/sei40/projects/capstone/src/audio/Traditional Garifuna drumming - Paranda with Warasa.mp3";
+import Music from "../../audio/Traditional Garifuna drumming - Paranda with Warasa.mp3";
 
 function LandingPage() {
-  // useEffect(() => {
-  //   window.addEventListener("DOMContentLoaded", (e) => {
-  //     document.querySelector("audio").play();
-
-  //   })
-  // }, []);
 
   return (
     <div>
