@@ -31,7 +31,7 @@ function Music(props) {
             <h5 className="card-title">{album.title}</h5>
             <p className="card-text">{album.artistName}</p>
             <a href={album.link}>
-              <p>Listen here</p>
+              <p style={{ color: "black" }}>Listen here</p>
             </a>
           </div>
         </div>
@@ -48,7 +48,6 @@ function Music(props) {
           <div className="info">
             <img
               src="https://www.womex.com/virtual/image/artist/the_garifuna_big_61532.jpg"
-              // className="rounded float-left"
               alt="..."
             />
             <span>

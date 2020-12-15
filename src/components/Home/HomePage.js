@@ -32,11 +32,13 @@ function HomePage() {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              className="bd-placeholder-img"
+              className="bd-placeholder-img carouselImage"
               style={{
-                maxWidth: "100%",
+                maxWidth: "1920px",
                 maxHeight: "565px",
                 border: "2px solid black",
+                objectFit: "cover",
+                width: "100vw",
               }}
               src={Slide1}
               preserveAspectRatio="xMidYMid slice"
@@ -46,8 +48,14 @@ function HomePage() {
 
           <div className="carousel-item">
             <img
-              className="bd-placeholder-img"
-              style={{ maxWidth: "100%", maxHeight: "565px" }}
+              className="bd-placeholder-img carouselImage"
+              style={{
+                maxWidth: "100%",
+                maxHeight: "565px",
+                border: "2px solid black",
+                object: "contain",
+                width: "100vw",
+              }}
               src={Slide2}
               preserveAspectRatio="xMidYMid slice"
               alt=""
@@ -56,8 +64,14 @@ function HomePage() {
 
           <div className="carousel-item">
             <img
-              className="bd-placeholder-img"
-              style={{ maxWidth: "100%", height: "565px" }}
+              className="bd-placeholder-img carouselImage"
+              style={{
+                maxWidth: "100%",
+                height: "565px",
+                border: "2px solid black",
+                object: "contain",
+                width: "100vw",
+              }}
               src={Slide3}
               preserveAspectRatio="xMidYMid slice"
               alt=""
@@ -66,8 +80,14 @@ function HomePage() {
 
           <div className="carousel-item">
             <img
-              className="bd-placeholder-img"
-              style={{ maxWidth: "100%", height: "565px" }}
+              className="bd-placeholder-img carouselImage"
+              style={{
+                maxWidth: "100%",
+                height: "565px",
+                border: "2px solid black",
+                object: "contain",
+                width: "100vw",
+              }}
               src={Slide4}
               preserveAspectRatio="xMidYMid slice"
               alt=""
@@ -76,8 +96,14 @@ function HomePage() {
 
           <div className="carousel-item">
             <img
-              className="bd-placeholder-img"
-              style={{ maxWidth: "100%", height: "565px" }}
+              className="bd-placeholder-img carouselImage"
+              style={{
+                maxWidth: "100%",
+                height: "565px",
+                border: "2px solid black",
+                object: "contain",
+                width: "100vw",
+              }}
               src={Slide5}
               preserveAspectRatio="xMidYMid slice"
               alt=""
@@ -86,8 +112,14 @@ function HomePage() {
 
           <div className="carousel-item">
             <img
-              className="bd-placeholder-img"
-              style={{ maxWidth: "100%", maxHeight: "565px" }}
+              className="bd-placeholder-img carouselImage"
+              style={{
+                maxWidth: "100%",
+                maxHeight: "565px",
+                border: "2px solid black",
+                object: "contain",
+                width: "100vw",
+              }}
               src={Slide6}
               preserveAspectRatio="xMidYMid slice"
               alt=""
@@ -254,7 +286,7 @@ function HomePage() {
           <div class="col-md-5 order-md-1">
             <img
               classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              style={{ width: "600px", height: "500px" }}
+              style={{ width: "600px", height: "500px", object: "fit" }}
               src={Music}
               preserveAspectRatio="xMidYMid slice"
               alt=""

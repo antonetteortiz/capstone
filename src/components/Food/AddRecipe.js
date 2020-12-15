@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import NavBar from "../../components/Navbar/Navbar"
 
 function CreateRecipe() {
   console.log("Create Recipe")
@@ -38,8 +39,9 @@ function CreateRecipe() {
 
   return (
     <div>
+    <NavBar />
       {success === false ? (
-        <form className="needs-validation">
+        <form className="needs-validation" style={{width: "1200px", margin: "0 auto", padding: "70px 0px"}}>
           <div className="form-group">
             <label for="recipeInputField">Recipe</label>
             <input

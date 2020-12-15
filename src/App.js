@@ -50,7 +50,7 @@ function App() {
     // fetch(apiUrl)
     //   .then((data) => data.json())
     //   .then((music) => setMusic(music));
-  };
+  // };
 
   const [recipe, setRecipe] = useState([{}]);
   const [recipeSearch, setRecipeSearch] = useState("");
@@ -68,29 +68,29 @@ function App() {
     //Argument passed here is saying everytime our argument changes the API will be called.
   }, [recipe]);
 
-  // const searchRecipe = (e) => {
-  //   e.preventDefault();
-  //   // console.log(e.target.value);
-  //   setRecipeSearch(e.target.value.toLowerCase());
+  const searchRecipe = (e) => {
+    e.preventDefault();
+    // console.log(e.target.value);
+    setRecipeSearch(e.target.value.toLowerCase());
 
-  //   // console.log("state", recipeSearch)
+    // console.log("state", recipeSearch)
 
-  //   if (recipeSearch.length > 1) {
-  //     // console.log("!!!", recipe)
-  //     let newRecipeArr = recipe.filter((input) =>
-  //       input.recipeName.toLowerCase().includes(recipeSearch)
-  //     );
-  //     console.log(newRecipeArr);
-  //     setFilteredRecipeList(newRecipeArr);
-  //   }
+    if (recipeSearch.length > 1) {
+      // console.log("!!!", recipe)
+      let newRecipeArr = recipe.filter((input) =>
+        input.recipeName.toLowerCase().includes(recipeSearch)
+      );
+      console.log(newRecipeArr);
+      setFilteredRecipeList(newRecipeArr);
+    }
 
-    // let apiUrl = "https://yurumeiapi.herokuapp.com/Recipe";
-    // fetch(apiUrl)
-    //   .then((data) => data.json())
-    //   .then((recipe) => setRecipe(recipe));
+    let apiUrl = "https://yurumeiapi.herokuapp.com/Recipe";
+    fetch(apiUrl)
+      .then((data) => data.json())
+      .then((recipe) => setRecipe(recipe));
   };
 
-  // console.log(recipe)
+  console.log(recipe)
 
   return (
     <div className="page-container">

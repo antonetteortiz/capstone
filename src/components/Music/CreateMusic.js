@@ -7,7 +7,7 @@ function CreateMusic() {
   const [artistName, setArtistName] = useState();
   const [title, setTitle] = useState();
   const [genre, setGenre] = useState();
-  const [label, setLabel] = useState();
+  const [link, setLink] = useState();
   const [year, setYear] = useState();
   const [artwork, setAlbumArtwork] = useState();
   const [sucess, setSucess] = useState(false);
@@ -22,10 +22,8 @@ function CreateMusic() {
           artistName,
           title,
           genre,
-          label,
-          producer,
+          link,
           year,
-          tracks,
           artwork,
         })
         .then(function (response) {
@@ -39,7 +37,10 @@ function CreateMusic() {
   return (
     <div>
       {sucess === false ? (
-        <form className="needs-validation">
+        <form
+          className="needs-validation"
+          style={{ width: "1200px", margin: "0 auto", padding: "70px 0px" }}
+        >
           <div className="form-group">
             <label for="artistInputField">Artist Name</label>
             <input
@@ -99,7 +100,7 @@ function CreateMusic() {
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              onChange={(event) => setLabel(event.target.value)}
+              onChange={(event) => setLink(event.target.value)}
             />
             <small id="emailHelp" className="form-text text-muted">
               Please insert link to streaming site (ie Spotify, SoundCloud,
