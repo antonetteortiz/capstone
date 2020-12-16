@@ -8,6 +8,7 @@ import Food from "./components/Food/Food";
 import Recipe from "./components/Food/Recipe";
 import AddRecipe from "./components/Food/AddRecipe";
 import HomePage from "./components/Home/HomePage";
+import History from "./components/History/History";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Footer from "./components/Footer/Footer";
 
@@ -184,6 +185,10 @@ function App() {
 
           <Route path="/addrecipe">
             <AddRecipe />
+          </Route>
+
+          <Route path="/history">
+            <History />
           </Route>
         </Switch>
       </div>

@@ -1,0 +1,20 @@
+* {
+    display: flex;
+}
+
+.map {
+  float: right;
+  padding: 3px 3px;
+  border: 2px solid #666666;
+  width: 40%;
+  margin: 0px 0px 10px 20px;
+}
+
+.briefHistory {
+  display: block;
+  justify-content: left;
+  margin: 0px 20px;
+  padding: 0px 20px;
+  line-height: 22px;
+  font-size: 15px;  
+}

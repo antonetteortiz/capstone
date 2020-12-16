@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Navbar from "../Navbar/Navbar";
+import "./Food.css"
 
 function Food(props) {
   const useStyles = makeStyles((theme) => ({
@@ -23,41 +24,41 @@ function Food(props) {
     heroButtons: {
       marginTop: theme.spacing(4),
     },
-    cardContainer: {
-      display: "flex",
-      width: "100%",
-      backgroundColor: "#FFD800",
-      flexDirection: "row",
-    },
-    cardGrid: {
-      paddingTop: theme.spacing(8),
-      paddingBottom: theme.spacing(8),
-    },
-    card: {
-      height: "150%",
-      // margin: "0 auto",
-      width: "30%",
-      display: "flex",
-      flexDirection: "column",
-      margin: "10px",
-      border: "1px solid black",
-    },
-    cardMedia: {
-      paddingTop: "56.25%", // 16:9
-    },
-    cardContent: {
-      height: "150px",
-    },
+    // cardContainer: {
+    //   display: "flex",
+    //   width: "100%",
+    //   backgroundColor: "#FFD800",
+    //   flexDirection: "row",
+    // },
+    // cardGrid: {
+    //   paddingTop: theme.spacing(8),
+    //   paddingBottom: theme.spacing(8),
+    // },
+    // card: {
+    //   height: "150%",
+    //   // margin: "0 auto",
+    //   width: "30%",
+    //   display: "flex",
+    //   flexDirection: "column",
+    //   margin: "10px",
+    //   border: "1px solid black",
+    // },
+    // cardMedia: {
+    //   paddingTop: "56.25%", // 16:9
+    // },
+    // cardContent: {
+    //   height: "150px",
+    // },
 
-    recipeCard: {
-      margin: "auto 0",
-      marginTop: "30px",
-      backgroundColor: "#FFD800",
-      align: "center",
-    },
-    header: {
-      height: "500px",
-    },
+    // recipeCard: {
+    //   margin: "auto 0",
+    //   marginTop: "30px",
+    //   backgroundColor: "#FFD800",
+    //   align: "center",
+    // },
+    // header: {
+    //   height: "500px",
+    // },
   }));
 
   const classes = useStyles();
@@ -84,33 +85,24 @@ const searchRecipe = (e) => {
   let recipeList = props.recipeList.map((recipe, i) => {
     return (
       // card container
-      <div
-        style={{
-          backgroundColor: "black",
-          color: "#ffd800",
-          width: "475px",
-          height: "600px",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+      <div className="recipeCard">
         {/* image container */}
         <div>
-          <img style={{ width: "475px", height: "356px" }} src={recipe.photo} alt="" />
+          <img className="recipeImage" src={recipe.photo} alt="" />
         </div>
         {/* image container END */}
 
         {/* name/description */}
-        <div style={{ paddingTop: "20px" }}>
+        <div style={{ paddingTop: "20px", paddingLeft: "10px"}}>
           <h4>{recipe.recipeName}</h4>
-          <div style={{ borderTop: "1px solid #FFD800"}}>
-            <p style={{paddingTop: "10px"}}>{recipe.description}</p>
+          <div style={{ borderTop: "2px solid #FFD800" }}>
+            <p style={{ paddingTop: "10px" }}>{recipe.description}</p>
           </div>
         </div>
 
         {/* action container */}
         <div style={{ display: "flex", margin: "1rem" }}>
-          <button
+          <button className="recipeButton"
             style={{
               outline: "none",
               border: "none",
@@ -120,7 +112,11 @@ const searchRecipe = (e) => {
           >
             Like
           </button>
-          <button style={{ outline: "none", border: "none" }}>View</button>
+          <Link to={`/recipe/${recipe.name}`}>
+            <button className="recipeButton" size="small" color="primary">
+              View
+            </button>
+          </Link>
         </div>
         {/* action container END */}
       </div>
@@ -130,31 +126,25 @@ const searchRecipe = (e) => {
   let recipeListFiltered = props.filteredRecipeList.map((recipe, i) => {
     return (
       // card container
-      <div
-        style={{
-          backgroundColor: "black",
-          color: "#ffd800",
-          width: "475px",
-          height: "600px",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+      <div className="recipeCard">
         {/* image container */}
         <div>
-          <img style={{ width: "475px", height: "356px" }} src={recipe.photo} alt=""/>
+          <img className="recipeImage" src={recipe.photo} alt="" />
         </div>
         {/* image container END */}
 
         {/* name/description */}
-        <div style={{ paddingTop: "20px" }}>
-          <h4>{recipe.name}</h4>
-          <p>{recipe.description}</p>
+        <div style={{ paddingTop: "20px", paddingLeft: "10px" }}>
+          <h4>{recipe.recipeName}</h4>
+          <div style={{ borderTop: "2px solid #FFD800" }}>
+            <p style={{ paddingTop: "10px" }}>{recipe.description}</p>
+          </div>
         </div>
 
         {/* action container */}
         <div style={{ display: "flex", margin: "1rem" }}>
           <button
+            className="recipeButton"
             style={{
               outline: "none",
               border: "none",
@@ -164,7 +154,11 @@ const searchRecipe = (e) => {
           >
             Like
           </button>
-          <button style={{ outline: "none", border: "none" }}>View</button>
+          <Link to={`/recipe/${recipe.name}`}>
+            <button className="recipeButton" size="small" color="primary">
+              View
+            </button>
+          </Link>
         </div>
         {/* action container END */}
       </div>

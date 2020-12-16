@@ -155,15 +155,15 @@ function HomePage() {
 
       {/* Features */}
       <div className="featureContainer">
-        <hr class="featurette-divider" />
+        <hr className="featurette-divider" />
 
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">
+        <div className="row featurette">
+          <div className="col-md-7">
+            <h2 className="featurette-heading">
               History of the Garifuna's{" "}
               {/* <span class="text-muted">It’ll blow your mind.</span> */}
             </h2>
-            <p class="lead">
+            <p className="lead">
               The Afro-Caribbean Garifuna people originated with the arrival of
               West African slaves who washed ashore on the Caribbean island of
               St. Vincent around 1635 while likely on their way to New World
@@ -174,29 +174,32 @@ function HomePage() {
               countries of Belize, Guatemala, Honduras and Nicaragua.
             </p>
             <a href="/history" style={{ color: "black" }}>
-              <small>learn more</small>
+              <small className="lead">learn more</small>
             </a>
           </div>
           <div class="col-md-5">
             <img
-              classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              style={{ width: "600px", height: "500px" }}
+              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              width="500"
+              height="500"
               src={History}
               preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+              role="img"
+              aria-label="Placeholder: 500x500"
               alt=""
             />
           </div>
         </div>
 
-        <hr class="featurette-divider" />
-
-        <div class="row featurette">
-          <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">
-              Garifuna Language{" "}
-              <span class="text-muted">See for yourself.</span>
+        <hr className="featurette-divider" />
+        <div className="row featurette">
+          <div className="col-md-7 order-md-2">
+            <h2 className="featurette-heading">
+              Oh yeah, it’s that good.{" "}
+              <span className="text-muted">See for yourself.</span>
             </h2>
-            <p class="lead">
+            <p className="lead">
               Garifuna is a minority language widely spoken in villages of
               Garifuna people in the western part of the northern coast of
               Central America. It is a member of the Arawakan language family
@@ -208,28 +211,32 @@ function HomePage() {
               involving warfare, migration and colonization.
             </p>
             <a href="/language" style={{ color: "black" }}>
-              <small>learn more</small>
+              <small className="lead">learn more</small>
             </a>
           </div>
-          <div class="col-md-5 order-md-1">
+          <div className="col-md-5 order-md-1">
             <img
-              classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              style={{ width: "600px", height: "500px" }}
+              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              width="500"
+              height="500"
               src={Language}
               preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+              role="img"
+              aria-label="Placeholder: 500x500"
               alt=""
             />
           </div>
         </div>
 
-        <hr class="featurette-divider" />
+        <hr className="featurette-divider" />
 
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">
-              Food <span class="text-muted">Checkmate.</span>
+        <div className="row featurette">
+          <div className="col-md-7">
+            <h2 className="featurette-heading">
+              Food <span className="text-muted"></span>
             </h2>
-            <p class="lead">
+            <p className="lead">
               Garifuna food is traditionally based on the staple foods of
               cassava, plantain and banana, combined with fish and other
               seafood. The colors of the Garifuna flag reflect the importance of
@@ -237,28 +244,32 @@ function HomePage() {
               the color of cassava bread; "ereba" in the Garifuna language.
             </p>
             <a href="/food" style={{ color: "black" }}>
-              <small>learn more</small>
+              <small className="lead">learn more</small>
             </a>
           </div>
-          <div class="col-md-5">
+          <div className="col-md-5">
             <img
-              classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              style={{ width: "600px", height: "500px" }}
+              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              width="500"
+              height="500"
               src={Food}
               preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+              role="img"
+              aria-label="Placeholder: 500x500"
               alt=""
             />
           </div>
         </div>
 
-        <hr class="featurette-divider" />
+        <hr className="featurette-divider" />
 
-        <div class="row featurette">
-          <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">
+        <div className="row featurette">
+          <div className="col-md-7 order-md-2">
+            <h2 className="featurette-heading">
               Music {/* <span class="text-muted">See for yourself.</span> */}
             </h2>
-            <p class="lead">
+            <p className="lead">
               Garifuna music is an ethnic music and dance with African and
               Arawak elements, originated by an Afro Indigenous group known as
               the Garifuna people, pre to their exile to Central America from
@@ -280,48 +291,56 @@ function HomePage() {
               UNESCO.
             </p>
             <a href="/music" style={{ color: "black" }}>
-              <small>learn more</small>
+              <small className="lead">learn more</small>
             </a>
           </div>
           <div class="col-md-5 order-md-1">
             <img
-              classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              style={{ width: "600px", height: "500px", object: "fit" }}
+              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              width="500"
+              height="500"
               src={Music}
               preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+              role="img"
+              aria-label="Placeholder: 500x500"
               alt=""
             />
           </div>
         </div>
 
-        <hr class="featurette-divider" />
+        <hr className="featurette-divider" />
 
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">
+        <div className="row featurette">
+          <div className="col-md-7">
+            <h2 className="featurette-heading">
               Forum
               {/* <span class="text-muted">Checkmate.</span> */}
             </h2>
-            <p class="lead">
+            <p className="lead">
               Our community forum is a greate place to learn, share and keep the
               Garifuna culture and traditions alive.
             </p>
             <a href="/forum" style={{ color: "black" }}>
-              <small>learn more</small>
+              <small className="lead">learn more</small>
             </a>
           </div>
           <div class="col-md-5">
             <img
-              classNameName="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              style={{ width: "600px", height: "500px" }}
+              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              width="500"
+              height="500"
               src={Forum}
               preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+              role="img"
+              aria-label="Placeholder: 500x500"
               alt=""
             />
           </div>
         </div>
 
-        <hr class="featurette-divider" />
+        <hr className="featurette-divider" />
       </div>
     </div>
   );
