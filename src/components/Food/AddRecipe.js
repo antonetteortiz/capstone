@@ -16,7 +16,7 @@ function CreateRecipe() {
 
   const submitToApi = (e) => {
     e.preventDefault();
-    console.log("submitting");
+    // console.log("submitting");
     let recipeInputField = document.querySelector("#recipeInputField");
     if (recipeInputField.value !== "") {
       axios

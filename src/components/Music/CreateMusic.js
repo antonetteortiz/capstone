@@ -18,7 +18,7 @@ function CreateMusic() {
     let artistInputField = document.querySelector("#artistInputField");
     if (artistInputField.value !== "") {
       axios
-        .post("https://garifunamusic.herokuapp.com/Music", {
+        .post("https://yurumeiapi.herokuapp.com/Music", {
           artistName,
           title,
           genre,
@@ -27,7 +27,7 @@ function CreateMusic() {
           artwork,
         })
         .then(function (response) {
-          // alert("Seremein (Thanks) for adding to our libary.");
+          alert("Seremein (Thanks) for adding to our libary.");
           console.log(response);
           setSucess(true);
         });
@@ -141,7 +141,7 @@ function CreateMusic() {
           </button>
         </form>
       ) : (
-        <Redirect to="/capstone" />
+        <Redirect to="/music" />
       )}
     </div>
   );

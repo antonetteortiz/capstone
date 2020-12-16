@@ -64,19 +64,19 @@ function Food(props) {
   const classes = useStyles();
 
 // Recipe Search
-const [recipe, setRecipe] = useState([{}]);
+
 const [recipeSearch, setRecipeSearch] = useState("");
 const [filteredRecipeList, setFilteredRecipeList] = useState([]);
 
 const searchRecipe = (e) => {
     e.preventDefault();
-    // console.log(e.target.value);
-    setRecipeSearch(e.target.value.toLowerCase());
+    console.log(e.target.value);
+    setRecipeSearch(e.target.value);
     if (recipeSearch.length > 1) {
-      let newRecipeArr = recipe.filter((input) =>
+      let newRecipeArr = props.recipeList.filter((input) =>
         input.recipeName.toLowerCase().includes(recipeSearch)
       );
-      // console.log(newRecipeArr);
+      console.log(newRecipeArr);
       setFilteredRecipeList(newRecipeArr);
     }; 
 }
@@ -87,7 +87,7 @@ const searchRecipe = (e) => {
   let recipeList = props.recipeList.map((recipe, i) => {
     return (
       // card container
-      <div className="recipeCard">
+      <div className="recipeCard shadow-lg rounded">
         {/* image container */}
         <div>
           <img className="recipeImage" src={recipe.photo} alt="" />
@@ -95,7 +95,7 @@ const searchRecipe = (e) => {
         {/* image container END */}
 
         {/* name/description */}
-        <div style={{ paddingTop: "20px", paddingLeft: "10px"}}>
+        <div style={{ paddingTop: "20px", paddingLeft: "10px" }}>
           <h4>{recipe.recipeName}</h4>
           <div style={{ borderTop: "2px solid #FFD800" }}>
             <p style={{ paddingTop: "10px" }}>{recipe.description}</p>
@@ -104,7 +104,8 @@ const searchRecipe = (e) => {
 
         {/* action container */}
         <div style={{ display: "flex", margin: "1rem" }}>
-          <button className="recipeButton"
+          <button
+            className="recipeButton"
             style={{
               outline: "none",
               border: "none",
@@ -125,7 +126,7 @@ const searchRecipe = (e) => {
     );
   });
 
-  let recipeListFiltered = props.filteredRecipeList.map((recipe, i) => {
+  let recipeListFiltered = filteredRecipeList.map((recipe, i) => {
     return (
       // card container
       <div className="recipeCard">
@@ -207,14 +208,14 @@ const searchRecipe = (e) => {
 
           <div className={classes.heroButtons}>
             <Grid container spacing={2} justify="center">
-              <Grid item>
+              <Grid item className="d-flex">
+
                 <form className="form-inline">
                   <input
                     className="form-control mr-sm-2"
                     type="text"
                     placeholder="Enter Name of Dish"
                     style={{ border: "1px solid black" }}
-                    // aria-label="Search"
                     value={recipeSearch}
                     onChange={searchRecipe}
                   />
@@ -230,6 +231,7 @@ const searchRecipe = (e) => {
                   >
                     Search
                   </button>
+                </form>
 
                   <Link to="/addrecipe">
                     <button
@@ -244,7 +246,6 @@ const searchRecipe = (e) => {
                       Add Recipe
                     </button>
                   </Link>
-                </form>
               </Grid>
             </Grid>
           </div>
@@ -259,7 +260,7 @@ const searchRecipe = (e) => {
           gridGap: "1rem",
         }}
       >
-        {props.recipeSearch.length > 1 ? recipeListFiltered : recipeList}
+        {recipeSearch.length > 1 ? recipeListFiltered : recipeList}
       </div>
     </div>
   );

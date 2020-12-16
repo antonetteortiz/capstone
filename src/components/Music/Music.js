@@ -1,12 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"
 import "./Music.css";
 import Navbar from "../Navbar/Navbar";
 
 function Music(props) {
+  const [music, setMusic] = useState([]);
+  const [artistSearch, setArtistSearch] = useState("");
+  const [filteredList, setFilteredList] = useState([]);
 
+  useEffect(() => {
+    let apiUrl = "https://yurumeiapi.herokuapp.com/Music";
+    fetch(apiUrl)
+      .then((data) => data.json())
+      .then((music) => setMusic(music));
+
+    // Empty array bracket will only run useEffect once, because we are fetching
+    //Argument passed here is saying everytime our argument changes the API will be called.
+  }, []);
   
   
-  let musicList = props.musicList.map((album, i) => {
+  const searchArtist = (e) => {
+    e.preventDefault();
+    // console.log(e.target.value);
+    setArtistSearch(e.target.value.toLowerCase());
+
+    // console.log("state", artistSearch)
+
+    if (artistSearch.length > 1) {
+      // console.log("!!!", music)
+      let newArtistArr = music.filter((input) =>
+        input.artistName.toLowerCase().includes(artistSearch)
+      );
+      console.log(newArtistArr);
+      setFilteredList(newArtistArr);
+    }
+
+  };
+
+
+  let musicList = music.map((album, i) => {
     return (
       <div className="col mb-4 mainBody">
         <div className="card" style={{ width: "18rem" }} key={i}>
@@ -25,7 +57,7 @@ function Music(props) {
     );
   });
 
-  let filteredList = props.filteredList.map((album, i) => {
+  let filteredMusicList = filteredList.map((album, i) => {
     return (
       <div className="col mb-4 mainBody">
         <div className="card" style={{ width: "18rem" }} key={i}>
@@ -70,12 +102,45 @@ function Music(props) {
               language was proclaimed as a Masterpiece of the Oral and
               Intangible Heritage of Humanity by UNESCO." - Source Wikipedia
             </span>
+
+            <form className="form-inline">
+              <input
+                className="form-control mr-sm-2"
+                type="text"
+                placeholder="Enter Artist Name"
+                // aria-label="Search"
+                value={artistSearch}
+                onChange={searchArtist}
+              />
+
+              <button
+                className="btn btn-outline-success my-2 my-sm-0"
+                type="submit"
+                onClick={() => searchArtist()}
+              >
+                Search
+              </button>
+            </form>
+
+            <Link to="/createmusic">
+              <button
+                className="btn my-2 my-lg-0 form-inline"
+                style={{
+                  border: "1px solid black",
+                  backgroundColor: "#FFD800",
+                  marginLeft: "10px",
+                }}
+                type="submit"
+              >
+                Add Artist
+              </button>
+            </Link>
           </div>
         </div>
         <br />
         <br />
         <div className="row row-cols-3 row-cols-md-3">
-          {props.artistSearch.length > 1 ? filteredList : musicList}
+          {artistSearch.length > 1 ? filteredMusicList : musicList}
         </div>
       </div>
     </div>

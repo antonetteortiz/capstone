@@ -16,47 +16,15 @@ function App() {
   // In react hooks this is how we set state
   // The first agrument is the name of the state, second argument is how we manipulate that state
   // Anything passed in useState is the default value of that state
-  const [music, setMusic] = useState([]);
-  const [artistSearch, setArtistSearch] = useState("");
-  const [filteredList, setFilteredList] = useState([]);
-
-  // UseEffect works similarily to componentDidMount
-  useEffect(() => {
-    let apiUrl = "https://yurumeiapi.herokuapp.com/Music";
-    fetch(apiUrl)
-      .then((data) => data.json())
-      .then((music) => setMusic(music));
-
-    // Empty array bracket will only run useEffect once, because we are fetching
-    //Argument passed here is saying everytime our argument changes the API will be called.
-  }, [music]);
-
-  const searchArtist = (e) => {
-    e.preventDefault();
-    // console.log(e.target.value);
-    setArtistSearch(e.target.value.toLowerCase());
-
-    // console.log("state", artistSearch)
-
-    if (artistSearch.length > 1) {
-      // console.log("!!!", music)
-      let newArtistArr = music.filter((input) =>
-        input.artistName.toLowerCase().includes(artistSearch)
-      );
-      console.log(newArtistArr);
-      setFilteredList(newArtistArr);
-    }
-
-    let apiUrl = "https://garifunamusic.herokuapp.com/Music";
-    fetch(apiUrl)
-      .then((data) => data.json())
-      .then((music) => setMusic(music));
-  };
   
-// Fetching data from recipe API
-  const [recipe, setRecipe] = useState([{}]);
+  const [heroes, setHeroes] = useState([]);
+  const [recipe, setRecipe] = useState([]);
   const [recipeSearch, setRecipeSearch] = useState("");
   const [filteredRecipeList, setFilteredRecipeList] = useState([]);
+
+  // UseEffect works similarily to componentDidMount
+  
+// Fetching data from recipe API
 
   useEffect(() => {
     let apiUrl = "https://yurumeiapi.herokuapp.com/Recipe";
@@ -68,7 +36,7 @@ function App() {
 
     // Empty array bracket will only run useEffect once, because we are fetching
     //Argument passed here is saying everytime our argument changes the API will be called.
-  }, [recipe]);
+  }, []);
 
   const searchRecipe = (e) => {
     e.preventDefault();
@@ -82,9 +50,9 @@ function App() {
       setFilteredRecipeList(newRecipeArr);
     }
   };
+  // console.log(recipe)
 
   // Fetching data from heroes API
-  const [heroes, setHeroes] = useState([{}]);
 
   useEffect(() => {
     let apiUrl = "https://yurumeiapi.herokuapp.com/Heroes";
@@ -94,34 +62,13 @@ function App() {
       .catch((err) => console.log(err));
     //  console.log(heroes);
 
-  }, [heroes]);
+  }, []);
 
 
-  console.log(recipe)
 
   return (
     <div className="page-container">
       <div className="content-wrap">
-        {/* <nav className="navbar navbar-light bg-light">
-        <form className="form-inline">
-          <input
-            className="form-control mr-sm-2"
-            type="text"
-            placeholder="Enter Artist Name"
-            // aria-label="Search"
-            value={artistSearch}
-            onChange={searchArtist}
-          />
-
-          <button
-            className="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
-            onClick={() => searchArtist()}
-          >
-            Search
-          </button>
-        </form>
-      </nav> */}
 
         <Switch>
           <Route exact path="/welcome">
@@ -133,11 +80,7 @@ function App() {
           </Route>
 
           <Route exact path="/music">
-            <Music
-              musicList={music}
-              filteredList={filteredList}
-              artistSearch={artistSearch}
-            />
+            <Music />
           </Route>
 
           <Route path="/createmusic">
@@ -156,8 +99,6 @@ function App() {
             <div className="recipe-box">
               <Food
                 recipeList={recipe}
-                filteredRecipeList={filteredRecipeList}
-                recipeSearch={recipeSearch}
               />
             </div>
           </Route>
