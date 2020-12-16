@@ -3,6 +3,9 @@ import "./Music.css";
 import Navbar from "../Navbar/Navbar";
 
 function Music(props) {
+
+  
+  
   let musicList = props.musicList.map((album, i) => {
     return (
       <div className="col mb-4 mainBody">

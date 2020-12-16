@@ -31,28 +31,29 @@ function App() {
     //Argument passed here is saying everytime our argument changes the API will be called.
   }, [music]);
 
-  // const searchArtist = (e) => {
-  //   e.preventDefault();
-  //   // console.log(e.target.value);
-  //   setArtistSearch(e.target.value.toLowerCase());
+  const searchArtist = (e) => {
+    e.preventDefault();
+    // console.log(e.target.value);
+    setArtistSearch(e.target.value.toLowerCase());
 
-  //   // console.log("state", artistSearch)
+    // console.log("state", artistSearch)
 
-  //   if (artistSearch.length > 1) {
-  //     // console.log("!!!", music)
-  //     let newArtistArr = music.filter((input) =>
-  //       input.artistName.toLowerCase().includes(artistSearch)
-  //     );
-  //     console.log(newArtistArr);
-  //     setFilteredList(newArtistArr);
-  //   }
+    if (artistSearch.length > 1) {
+      // console.log("!!!", music)
+      let newArtistArr = music.filter((input) =>
+        input.artistName.toLowerCase().includes(artistSearch)
+      );
+      console.log(newArtistArr);
+      setFilteredList(newArtistArr);
+    }
 
-    // let apiUrl = "https://garifunamusic.herokuapp.com/Music";
-    // fetch(apiUrl)
-    //   .then((data) => data.json())
-    //   .then((music) => setMusic(music));
-  // };
-
+    let apiUrl = "https://garifunamusic.herokuapp.com/Music";
+    fetch(apiUrl)
+      .then((data) => data.json())
+      .then((music) => setMusic(music));
+  };
+  
+// Fetching data from recipe API
   const [recipe, setRecipe] = useState([{}]);
   const [recipeSearch, setRecipeSearch] = useState("");
   const [filteredRecipeList, setFilteredRecipeList] = useState([]);
@@ -73,47 +74,35 @@ function App() {
     e.preventDefault();
     // console.log(e.target.value);
     setRecipeSearch(e.target.value.toLowerCase());
-
-    // console.log("state", recipeSearch)
-
     if (recipeSearch.length > 1) {
-      // console.log("!!!", recipe)
       let newRecipeArr = recipe.filter((input) =>
         input.recipeName.toLowerCase().includes(recipeSearch)
       );
-      console.log(newRecipeArr);
+      // console.log(newRecipeArr);
       setFilteredRecipeList(newRecipeArr);
     }
+  };
 
-    let apiUrl = "https://yurumeiapi.herokuapp.com/Recipe";
+  // Fetching data from heroes API
+  const [heroes, setHeroes] = useState([{}]);
+
+  useEffect(() => {
+    let apiUrl = "https://yurumeiapi.herokuapp.com/Heroes";
     fetch(apiUrl)
       .then((data) => data.json())
-      .then((recipe) => setRecipe(recipe));
-  };
+      .then((heroes) => setHeroes(heroes))
+      .catch((err) => console.log(err));
+    //  console.log(heroes);
+
+  }, [heroes]);
+
 
   console.log(recipe)
 
   return (
     <div className="page-container">
       <div className="content-wrap">
-        {/* <Navbar />  */}
         {/* <nav className="navbar navbar-light bg-light">
-        <a className="navbar-brand" href="#">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Flag_of_Garifuna.svg"
-            width="30"
-            height="30"
-            class="d-inline-block align-top"
-            alt=""
-            loading="lazy"
-          />
-          <Link to="/capstone"> Yurumei </Link>
-          <Link to="/music"> Music </Link>
-          <Link to="/createmusic"> Create Artist </Link>
-          <Link to="/signup"> SignUp </Link>
-          <Link to="/signin"> SignIn </Link>
-        </a>
-
         <form className="form-inline">
           <input
             className="form-control mr-sm-2"
@@ -188,7 +177,9 @@ function App() {
           </Route>
 
           <Route path="/history">
-            <History />
+            <History 
+              heroesList={heroes}
+            />
           </Route>
         </Switch>
       </div>

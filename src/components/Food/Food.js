@@ -81,6 +81,8 @@ const searchRecipe = (e) => {
     }; 
 }
 
+
+
 // Place data from API in cards
   let recipeList = props.recipeList.map((recipe, i) => {
     return (
