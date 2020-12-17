@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
 import { useParams } from "react-router-dom";
+import "./Recipe.css"
 
 function RecipePage(props) {
   const params = useParams();
@@ -10,81 +11,54 @@ function RecipePage(props) {
   let recipe = props.recipeList.map((recipe, i) => {
     return (
       <div>
-        {recipe.recipeName == params.recipeName 
-        ? 
-        <div>
-          <h1 className="mt-4">{recipe.recipeName}</h1>
+        {recipe.recipeName == params.recipeName ? (
+          <div className="recipe" style={{ margin: "60px"}}>
+            <h1 className="mt-4">{recipe.recipeName}</h1>
 
-          <p className="lead">by {recipe.author}</p>
+            <p className="lead">by {recipe.author}</p>
 
-          <hr />
+            <hr />
 
-          <img className="img-fluid rounded" src={recipe.photo} alt="" />
+            <img
+              className="img-fluid rounded"
+              src={recipe.photo}
+              alt=""
+              style={{ height: "550px", paddingBottom: "20px" }}
+            />
 
-          <hr />
+            <hr />
 
-          <h3 className="lead">Ingredients</h3>
-          <p>{recipe.ingredients}</p>
-        
-          <hr />
-          
-          <h3 className="lead">Directions</h3>
-          <h6>{recipe.servings}</h6>
+            <h2 className="lead" style={{ paddingTop: "20px" }}>
+              Ingredients
+            </h2>
+            <p style={{ paddingTop: "20px" }}>{recipe.ingredients}</p>
 
-          <p>{recipe.steps}</p>
+            <hr />
 
-          <hr />
+            <h3 className="lead" style={{ paddingTop: "20px" }}>
+              Directions
+            </h3>
+            <h6 style={{ paddingTop: "20px" }}>{recipe.servings}</h6>
 
-          <div className="card my-4">
-            <h5 className="card-header">Leave a Comment:</h5>
-            <div className="card-body">
-              <form>
-                <div className="form-group">
-                  <textarea className="form-control" rows="3"></textarea>
-                </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-              </form>
+            <p style={{ paddingTop: "20px" }}>{recipe.steps}</p>
+
+            <hr />
+
+            <div className="card my-4 recipeComment">
+              <h5 className="card-header">Leave a Comment:</h5>
+              <div className="card-body">
+                <form>
+                  <div className="form-group">
+                    <textarea className="form-control" rows="3"></textarea>
+                  </div>
+                  <button type="submit" className="btn commentButton">
+                    Submit
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
-
-        
-          <div className="media mb-4">
-            {/* <img className="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="" /> */}
-            <div className="media-body">
-              <h5 className="mt-0">Commenter Name</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-          </div>
-
-        
-          <div className="media mb-4">
-            {/* <img className="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt=""> */}
-            <div className="media-body">
-              <h5 className="mt-0">Commenter Name</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-
-            <div className="media mt-4">
-                <img className="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="" />
-                <div className="media-body">
-                  <h5 className="mt-0">Commenter Name</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-              </div>
-
-              <div className="media mt-4">
-                <img className="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="" />
-                <div className="media-body">
-                  <h5 className="mt-0">Commenter Name</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-              </div>
-
-          </div>
-        </div>
-
-      </div>
-   
-         : null}
+        ) : null}
       </div>
     );
   });

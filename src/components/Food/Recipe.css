@@ -1,0 +1,16 @@
+.recipe {
+    margin: 20px
+}
+
+.recipeComment .card-header {
+    background-color: white;
+}
+
+.commentButton {
+    background-color: #ffd800;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
