@@ -1,3 +1,8 @@
+.recipeHeading {
+    margin: 0 auto;
+    border: 1px solid red
+}
+
 .recipeCard {
     background-color: white;
     color: black;

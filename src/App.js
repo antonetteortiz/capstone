@@ -16,21 +16,25 @@ function App() {
   // In react hooks this is how we set state
   // The first agrument is the name of the state, second argument is how we manipulate that state
   // Anything passed in useState is the default value of that state
-  
-  const [heroes, setHeroes] = useState([]);
-  const [recipe, setRecipe] = useState([]);
+
+  const [heroes, setHeroes] = useState([{}]);
+  const [recipe, setRecipe] = useState([{}]);
   const [recipeSearch, setRecipeSearch] = useState("");
   const [filteredRecipeList, setFilteredRecipeList] = useState([]);
 
   // UseEffect works similarily to componentDidMount
-  
-// Fetching data from recipe API
+
+  // Fetching data from recipe API
 
   useEffect(() => {
     let apiUrl = "https://yurumeiapi.herokuapp.com/Recipe";
     fetch(apiUrl)
       .then((data) => data.json())
-      .then((recipe) => setRecipe(recipe))
+      .then((recipe) => {
+        setRecipe(recipe)
+        console.log(recipe)
+      })
+      .then((recipe)=>console.log(recipe))
       .catch((err) => console.log(err));
     //  console.log(recipe);
 
@@ -61,15 +65,11 @@ function App() {
       .then((heroes) => setHeroes(heroes))
       .catch((err) => console.log(err));
     //  console.log(heroes);
-
   }, []);
-
-
 
   return (
     <div className="page-container">
       <div className="content-wrap">
-
         <Switch>
           <Route exact path="/welcome">
             <LandingPage />
@@ -87,23 +87,25 @@ function App() {
             <CreateMusic />
           </Route>
 
-          <Route
+          {/* <Route
             // exact
             path="/updatemusic/:artistName"
             render={() => {
               return <UpdateMusic music={music} />;
             }}
-          />
+          /> */}
 
           <Route exact path="/food">
             <div className="recipe-box">
               <Food
                 recipeList={recipe}
+                filteredRecipeList={filteredRecipeList}
+                recipeSearch={recipeSearch}
               />
             </div>
           </Route>
 
-          <Route exact path="/recipe/:name">
+          <Route exact path="/recipe/:recipeName">
             <div className="recipe-box">
               <Recipe
                 recipeList={recipe}
@@ -111,16 +113,14 @@ function App() {
                 recipeSearch={recipeSearch}
               />
             </div>
-          </Route> 
+          </Route>
 
           <Route path="/addrecipe">
             <AddRecipe />
           </Route>
 
           <Route path="/history">
-            <History 
-              heroesList={heroes}
-            />
+            <History heroesList={heroes} />
           </Route>
         </Switch>
       </div>

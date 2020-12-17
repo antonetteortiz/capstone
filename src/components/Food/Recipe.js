@@ -10,10 +10,10 @@ function RecipePage(props) {
   let recipe = props.recipeList.map((recipe, i) => {
     return (
       <div>
-        {recipe.name == params.name 
+        {recipe.recipeName == params.recipeName 
         ? 
           <div className="recipe">
-            <h1>{recipe.name}</h1>
+            <h1>{recipe.recipeName}</h1>
             <h3>{recipe.description}</h3>
             <div className="foodImage">
               <img src={recipe.photo} className="card-img-top" alt="..." />

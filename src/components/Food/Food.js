@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Navbar from "../Navbar/Navbar";
 import "./Food.css"
+import Image from "../../images/cassavaBread.jpg";
 
 function Food(props) {
   const useStyles = makeStyles((theme) => ({
@@ -85,6 +86,7 @@ const searchRecipe = (e) => {
 
 // Place data from API in cards
   let recipeList = props.recipeList.map((recipe, i) => {
+    // console.log(recipe)
     return (
       // card container
       <div className="recipeCard shadow-lg rounded">
@@ -115,7 +117,7 @@ const searchRecipe = (e) => {
           >
             Like
           </button>
-          <Link to={`/recipe/${recipe.name}`}>
+          <Link to={`/recipe/${recipe.recipeName}`}>
             <button className="recipeButton" size="small" color="primary">
               View
             </button>
@@ -126,6 +128,7 @@ const searchRecipe = (e) => {
     );
   });
 
+  console.log(filteredRecipeList)
   let recipeListFiltered = filteredRecipeList.map((recipe, i) => {
     return (
       // card container
@@ -137,10 +140,13 @@ const searchRecipe = (e) => {
         {/* image container END */}
 
         {/* name/description */}
-        <div style={{ paddingTop: "20px", paddingLeft: "10px" }}>
-          <h4>{recipe.recipeName}</h4>
+        <div
+          className="lead"
+          style={{ paddingTop: "20px", paddingLeft: "10px" }}
+        >
+          <h4 className="lead">{recipe.recipeName}</h4>
           <div style={{ borderTop: "2px solid #FFD800" }}>
-            <p style={{ paddingTop: "10px" }}>{recipe.description}</p>
+            <p className="lead" style={{ paddingTop: "10px" }}>{recipe.description}</p>
           </div>
         </div>
 
@@ -157,7 +163,7 @@ const searchRecipe = (e) => {
           >
             Like
           </button>
-          <Link to={`/recipe/${recipe.name}`}>
+          <Link to={`/recipe/${recipe.recipeName}`}>
             <button className="recipeButton" size="small" color="primary">
               View
             </button>
@@ -177,22 +183,20 @@ const searchRecipe = (e) => {
       }}
     >
       <Navbar />
-      <div className={classes.heroContent}>
-        <Container maxWidth="sm" className={classes.header}>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <Typography variant="h5" align="center" color="black" paragraph>
-            Garifuna food is traditionally based on the staple foods of cassava,
-            plantain and banana, combined with fish and other seafood. The
-            colors of the Garifuna flag reflect the importance of cassava to the
-            Garifuna people, as the yellow stripe represents the color of
-            cassava bread; “ereba” in the Garifuna language.
-            {/* Cassava is not only made into flatbread, but also into sweet
+      <div style={{backgroundColor: "red"}}>
+        <div className="row featurette recipeHeading">
+          <div className="col-md-7">
+            <h2 className="featurette-heading">
+              History of the Garifuna's{" "}
+              {/* <span class="text-muted">It’ll blow your mind.</span> */}
+            </h2>
+            <p className="lead">
+              Garifuna food is traditionally based on the staple foods of
+              cassava, plantain and banana, combined with fish and other
+              seafood. The colors of the Garifuna flag reflect the importance of
+              cassava to the Garifuna people, as the yellow stripe represents
+              the color of cassava bread; “ereba” in the Garifuna language.
+              Cassava is not only made into flatbread, but also into sweet
               deserts such as cassava pudding (also known as plastic cake due to
               its rubbery consistency), and sweetened drinks like sahou. It is
               also sometimes included in stews. Plantain and banana are used
@@ -203,53 +207,24 @@ const searchRecipe = (e) => {
               of around three parts green plantain to one part ripe plantain.
               Both are boiled and then pounded together in a wooden “mata” until
               the consistency of a moist dough. Mashed plantain is served with
-              other Garifuna dishes such as “Tikini” and “Tapado”. */}
-          </Typography>
-
-          <div className={classes.heroButtons}>
-            <Grid container spacing={2} justify="center">
-              <Grid item className="d-flex">
-
-                <form className="form-inline">
-                  <input
-                    className="form-control mr-sm-2"
-                    type="text"
-                    placeholder="Enter Name of Dish"
-                    style={{ border: "1px solid black" }}
-                    value={recipeSearch}
-                    onChange={searchRecipe}
-                  />
-
-                  <button
-                    className="btn my-2 my-lg-0"
-                    style={{
-                      border: "1px solid black",
-                      backgroundColor: "#FFD800",
-                    }}
-                    type="submit"
-                    onClick={() => searchRecipe()}
-                  >
-                    Search
-                  </button>
-                </form>
-
-                  <Link to="/addrecipe">
-                    <button
-                      className="btn my-2 my-lg-0 form-inline"
-                      style={{
-                        border: "1px solid black",
-                        backgroundColor: "#FFD800",
-                        marginLeft: "10px",
-                      }}
-                      type="submit"
-                    >
-                      Add Recipe
-                    </button>
-                  </Link>
-              </Grid>
-            </Grid>
+              other Garifuna dishes such as “Tikini” and “Tapado”.
+            </p>
           </div>
-        </Container>
+          <div class="col-md-5">
+            <img
+              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+              width="500"
+              height="700"
+              src={Image}
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+              role="img"
+              aria-label="Placeholder: 500x500"
+              alt=""
+            />
+          </div>
+        </div>
+
       </div>
       <div
         style={{
