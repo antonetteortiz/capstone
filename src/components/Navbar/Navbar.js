@@ -108,7 +108,7 @@ const handleAccount = () => {
                 to="/food"
                 style={{ textDecoration: "none", color: "black" }}
               >
-                <h4>Recipes</h4>
+                <h4>Food</h4>
               </Link>
 
               <Link

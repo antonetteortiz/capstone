@@ -183,11 +183,11 @@ const searchRecipe = (e) => {
       }}
     >
       <Navbar />
-      <div style={{backgroundColor: "red"}}>
+      <div style={{ backgroundColor: "red" }}>
         <div className="row featurette recipeHeading">
           <div className="col-md-7">
             <h2 className="featurette-heading">
-              History of the Garifuna's{" "}
+              Garifuna Food{" "}
               {/* <span class="text-muted">It’ll blow your mind.</span> */}
             </h2>
             <p className="lead">
@@ -224,7 +224,52 @@ const searchRecipe = (e) => {
             />
           </div>
         </div>
+      </div>
 
+      <div>
+        <h1 className="mt-5" style={{alignText: "center"}}>Garifuna Recipes</h1>
+        <div className={classes.heroButtons}>
+          <Grid container spacing={2} justify="center">
+            <Grid item className="d-flex">
+              <form className="form-inline">
+                <input
+                  className="form-control mr-sm-2"
+                  type="text"
+                  placeholder="Enter Name of Dish"
+                  style={{ border: "1px solid black" }}
+                  value={recipeSearch}
+                  onChange={searchRecipe}
+                />
+
+                <button
+                  className="btn my-2 my-lg-0"
+                  style={{
+                    border: "1px solid black",
+                    backgroundColor: "#FFD800",
+                  }}
+                  type="submit"
+                  onClick={() => searchRecipe()}
+                >
+                  Search
+                </button>
+              </form>
+
+              <Link to="/addrecipe">
+                <button
+                  className="btn my-2 my-lg-0 form-inline"
+                  style={{
+                    border: "1px solid black",
+                    backgroundColor: "#FFD800",
+                    marginLeft: "10px",
+                  }}
+                  type="submit"
+                >
+                  Add Recipe
+                </button>
+              </Link>
+            </Grid>
+          </Grid>
+        </div>
       </div>
       <div
         style={{

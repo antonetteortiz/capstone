@@ -1,20 +1,49 @@
-* {
-    display: flex;
-}
-
-.map {
-  float: right;
-  padding: 3px 3px;
-  border: 2px solid #666666;
-  width: 40%;
-  margin: 0px 0px 10px 20px;
+.history-container{
+  display: flex;
+  flex-direction: column;
 }
 
 .briefHistory {
-  display: block;
-  justify-content: left;
-  margin: 0px 20px;
-  padding: 0px 20px;
-  line-height: 22px;
-  font-size: 15px;  
+ /* display: flex; */
+ align-items: center;
+ padding: 2%
+}
+
+.briefHistory img {
+  margin: 0 2% 1% 0;
+}
+
+.heroes-container {
+  display: flex;
+
+}
+
+.img-card {
+  width: 30vw;
+  margin: 2%;
+}
+
+.img-card img {
+  height: 30vw;
+  width: 30vw;
+  border: 5px solid white;
+}
+
+@media (max-width:768px) {
+  .heroes-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .img-card {
+  width: 50vw;
+  border-bottom: 1px solid #E2BB09;
+}
+
+.img-card img {
+  height: 50vw;
+  width: 50vw;
+}
+  
 }
