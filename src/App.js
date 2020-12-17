@@ -71,7 +71,7 @@ function App() {
     <div className="page-container">
       <div className="content-wrap">
         <Switch>
-          <Route exact path="/welcome">
+          <Route exact path="/">
             <LandingPage />
           </Route>
 
