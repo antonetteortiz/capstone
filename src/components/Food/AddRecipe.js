@@ -39,9 +39,19 @@ function CreateRecipe() {
 
   return (
     <div>
-    <NavBar />
+      <NavBar />
+      <div className="lead mt-4">
+        <h1 style={{ marginRight: "20px" }}>Add your recipe</h1>
+      </div>
       {success === false ? (
-        <form className="needs-validation" style={{width: "1200px", margin: "0 auto", padding: "70px 0px"}}>
+        <form
+          className="needs-validation"
+          style={{
+            width: "1200px",
+            margin: "0 auto",
+            padding: "20px 0px 80px, 0px",
+          }}
+        >
           <div className="form-group">
             <label for="recipeInputField">Recipe</label>
             <input
@@ -147,6 +157,7 @@ function CreateRecipe() {
             type="submit"
             className="btn btn-primary"
             onClick={(e) => submitToApi(e)}
+            style={{ border: "1px solid black", backgroundColor: "black", marginBottom: "60px"}}
           >
             Submit
           </button>
