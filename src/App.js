@@ -3,7 +3,6 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Music from "./components/Music/Music";
 import CreateMusic from "./components/Music/CreateMusic";
-import UpdateMusic from "./components/Music/UpdateMusic";
 import Food from "./components/Food/Food";
 import Recipe from "./components/Food/Recipe";
 import AddRecipe from "./components/Food/AddRecipe";
@@ -84,7 +83,7 @@ function App() {
             <Music />
           </Route>
 
-          <Route path="/createmusic">
+          <Route exact path="/createmusic">
             <CreateMusic />
           </Route>
 

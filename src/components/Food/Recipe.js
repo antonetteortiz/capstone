@@ -12,7 +12,7 @@ function RecipePage(props) {
     return (
       <div>
         {recipe.recipeName == params.recipeName ? (
-          <div className="recipe" style={{ margin: "60px"}}>
+          <div className="recipe" style={{ margin: "60px" }}>
             <h1 className="mt-4">{recipe.recipeName}</h1>
 
             <p className="lead">by {recipe.author}</p>
@@ -32,36 +32,42 @@ function RecipePage(props) {
               Ingredients
             </h2>
 
-            <p style={{ paddingTop: "20px" }}>{recipe.ingredients.map((ingredient, j) => { 
-              return (
-              <p>{ingredient}</p>
-              )
-            })}</p>
+            <p className="lead" style={{ paddingTop: "20px" }}>
+              {recipe.ingredients.map((ingredient, j) => {
+                return <p>{ingredient}</p>;
+              })}
+            </p>
 
             <hr />
 
             <h3 className="lead" style={{ paddingTop: "20px" }}>
-              Directions
+            <h3>Directions</h3>
             </h3>
-            <h6 style={{ paddingTop: "20px" }}>{recipe.servings}</h6>
 
-            <p style={{ paddingTop: "20px" }}>{recipe.steps.map((steps, l) => {
-              return (
-                <p>- {steps}</p>
-              )
-            })}</p>
+            <h6 className="lead" style={{ paddingTop: "20px" }}>
+            <b>
+              {recipe.servings}
+            </b>
+            </h6>
+
+            <p className="lead" style={{ paddingTop: "20px" }}>
+              {recipe.steps.map((steps, l) => {
+                return <p>- {steps}</p>;
+              })}
+            </p>
 
             <hr />
 
             <div className="card my-4 recipeComment">
               <h5 className="card-header">Leave a Comment:</h5>
               <div className="card-body">
-
                 <form>
                   <div className="form-group">
                     <textarea className="form-control" rows="3"></textarea>
                   </div>
-                  <button type="submit" className="btn commentButton">
+                  <button type="submit" className="btn commentButton"
+                  // onChange={(event) => setComment(event.target.value)}
+                  >
                     Submit
                   </button>
                 </form>

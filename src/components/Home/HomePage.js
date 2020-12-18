@@ -211,7 +211,7 @@ function HomePage() {
               involving warfare, migration and colonization.
             </p>
             <a href="/language" style={{ color: "black" }}>
-              <small className="lead">learn more</small>
+              <small className="lead">coming soon</small>
             </a>
           </div>
           <div className="col-md-5 order-md-1">
@@ -322,7 +322,7 @@ function HomePage() {
               Garifuna culture and traditions alive.
             </p>
             <a href="/forum" style={{ color: "black" }}>
-              <small className="lead">learn more</small>
+              <small className="lead">coming soon</small>
             </a>
           </div>
           <div class="col-md-5">

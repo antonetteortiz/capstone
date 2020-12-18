@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 import "./Music.css";
 import Navbar from "../Navbar/Navbar";
+import Grid from "@material-ui/core/Grid";
 import Drumming from "../../audio/Traditional Garifuna drumming - Paranda with Warasa.mp3"
 
 function Music(props) {
@@ -78,7 +79,7 @@ function Music(props) {
   return (
     <div>
       <Navbar />
-      <div className="music-container">
+      <div className="music-container m-4">
         <div className="gariInfo">
           <h1 classname="m-4">Garifuna Music</h1>
           <div className="info">
@@ -88,27 +89,32 @@ function Music(props) {
               alt="..."
               align="top"
             />
-            <p className="lead">
-              "Garifuna music is an ethnic music and dance with African and
-              Arawak elements, originated by an Afro Indigenous group known as
-              the Garifuna people, pre to their exile to Central
-              America from Saint Vincent And The Grenadines. It represents and
-              belongs to the Garifuna community. Garifuna music and dance are
-              closely related. The main traditional instruments are drums
-              and maracas. Drums play an important role in Garifuna music. The
-              main drum is the Segunda (bass drum). The drums are normally made
-              by hollowing out logs and stretching antelope skin over them.
-              There are certain types of songs that are associated with work,
-              some with play, some with dance and some that are reserved for
-              prayer or ritual use. Two main Garifuna genres
-              are punta and paranda. In 2001, Garifuna music, dance, and
-              language was proclaimed as a Masterpiece of the Oral and
-              Intangible Heritage of Humanity by UNESCO." - Source Wikipedia
-            </p>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <p className="lead">
+                "Garifuna music is an ethnic music and dance with African and
+                Arawak elements, originated by an Afro Indigenous group known as
+                the Garifuna people, pre to their exile to Central
+                America from Saint Vincent And The Grenadines. It represents and
+                belongs to the Garifuna community. Garifuna music and dance are
+                closely related. The main traditional instruments are drums
+                and maracas. Drums play an important role in Garifuna music. The
+                main drum is the Segunda (bass drum). The drums are normally
+                made by hollowing out logs and stretching antelope skin over
+                them. There are certain types of songs that are associated with
+                work, some with play, some with dance and some that are reserved
+                for prayer or ritual use. Two main Garifuna genres
+                are punta and paranda. In 2001, Garifuna music, dance, and
+                language was proclaimed as a Masterpiece of the Oral and
+                Intangible Heritage of Humanity by UNESCO." - Source Wikipedia
+              </p>
 
-            <form className="form">
+              {/* <form className="form" style={{display: "flex", justifyContent: "center",}}>
               <input
-                className="form-control mr-sm-2"
                 type="text"
                 placeholder="Enter Artist Name"
                 style={{ border: "1px solid black" }}
@@ -128,7 +134,6 @@ function Music(props) {
               >
                 Search
               </button>
-            </form>
 
             <Link to="/createmusic">
               <button
@@ -143,10 +148,54 @@ function Music(props) {
                 Add Artist
               </button>
             </Link>
+            </form> */}
+            </div>
           </div>
         </div>
         <hr />
         <h1>Garifuna Artist</h1>
+        <div style={{marginBottom: "2%"}}>
+          <Grid container spacing={2} style={{marginBottom: "20px"}}>
+            <Grid item className="d-flex">
+              <form className="form-inline">
+                <input
+                  className="form-control mr-sm-2"
+                  type="text"
+                  placeholder="Enter Artist Name"
+                  style={{ border: "1px solid black" }}
+                  value={artistSearch}
+                  onChange={searchArtist}
+                />
+
+                <button
+                  className="btn my-2 my-lg-0 "
+                  style={{
+                    border: "1px solid black",
+                    backgroundColor: "#FFD800",
+                  }}
+                  type="submit"
+                  onClick={() => searchArtist()}
+                >
+                  Search
+                </button>
+              </form>
+
+              <Link to="/createmusic">
+                <button
+                  className="btn my-2 my-lg-0  "
+                  style={{
+                    border: "1px solid black",
+                    backgroundColor: "#FFD800",
+                    marginLeft: "10px",
+                  }}
+                  type="submit"
+                >
+                  Add Artist
+                </button>
+              </Link>
+            </Grid>
+          </Grid>
+        </div>
         <div className="row row-cols-3 row-cols-md-3">
           {artistSearch.length > 1 ? filteredMusicList : musicList}
         </div>

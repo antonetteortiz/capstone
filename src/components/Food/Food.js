@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
 import Navbar from "../Navbar/Navbar";
 import "./Food.css";
 import Image from "../../images/cassavaBread.jpg";
@@ -95,26 +93,23 @@ function Food(props) {
         {/* image container END */}
 
         {/* name/description */}
-        <div style={{ paddingTop: "20px", paddingLeft: "10px" }}>
-        <div style={{height: "60px"}}>
+        <div className="recipe-name">
           <h4>{recipe.recipeName}</h4>
         </div>
-          <div style={{ borderTop: "2px solid #FFD800" }}>
-            <p style={{ paddingTop: "10px", height: "100px" }}>
-              {recipe.description}
-            </p>
+        
+        <div className="view-recipe">
+          <div className="recipe-description">
+            <p>{recipe.description}</p>
           </div>
         </div>
 
         {/* action container */}
-        <div style={{ display: "flex", marginBottom: "30px" }}>
+        <div className="action-container">
           <button
             className="recipeButton"
             style={{
               outline: "none",
               border: "none",
-              marginRight: "10px",
-              borderRadius: "4px",
             }}
           >
             Like
@@ -155,7 +150,7 @@ function Food(props) {
         </div>
 
         {/* action container */}
-        <div className="card-button">
+        <div>
           <div style={{ display: "flex", margin: "1rem" }}>
             <button
               className="recipeButton"
@@ -190,7 +185,7 @@ function Food(props) {
     // }}
     >
       <Navbar />
-      <div style={{ width: "100%" }}>
+      <div className="m-4" style={{ width: "100%" }}>
         <div className="row featurette recipeHeading">
           <div className="col-md-7">
             <h2 className="featurette-heading mt-4">Garifuna Food</h2>

@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 import axios from "axios";
 
 function CreateMusic() {
-  console.log("Create Music")
+  console.log("Create Music");
   const [artistName, setArtistName] = useState();
   const [title, setTitle] = useState();
   const [genre, setGenre] = useState();
