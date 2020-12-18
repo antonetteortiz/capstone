@@ -48,11 +48,9 @@ function Music(props) {
           <div className="card-body">
             <h5 className="card-title">{album.title}</h5>
             <h6 className="card-text">{album.artistName}</h6>
-            <a href={album.link}>
+            <a href={album.link} target="_blank">
               <p>Listen here</p>
             </a>
-            
-
           </div>
         </div>
       </div>
