@@ -43,13 +43,13 @@ function Music(props) {
   let musicList = music.map((album, i) => {
     return (
       <div className="col mb-4 mainBody">
-        <div className="card" style={{ width: "18rem" }} key={i}>
+        <div className="card" style={{ width: "18rem", border: "1px solid black" }} key={i}>
           <img src={album.artwork} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{album.title}</h5>
             <h6 className="card-text">{album.artistName}</h6>
             <a href={album.link} target="_blank">
-              <p>Listen here</p>
+              <p style={{color: "black"}}>Listen here</p>
             </a>
           </div>
         </div>
