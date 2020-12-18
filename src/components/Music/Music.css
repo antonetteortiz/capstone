@@ -1,22 +1,18 @@
-.mainBody {
+.music-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  /* flex-direction: column; */
+  flex-direction: column;
 }
 
-.gariInfo {
-    padding:10px;
-    margin: 10px;
+.info {
+ align-items: center;
+ padding: 2%
 }
 
-.gariInfo span {
-    padding-left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.info img {
+ margin: 0 2% 1% 0;  
 }
 
 .info {
     display: flex;
 }
+

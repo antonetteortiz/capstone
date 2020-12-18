@@ -190,49 +190,55 @@ function Food(props) {
     // }}
     >
       <Navbar />
-      <div style={{ backgroundColor: "red", width: "100%" }}>
+      <div style={{ width: "100%" }}>
         <div className="row featurette recipeHeading">
           <div className="col-md-7">
-            <h2 className="featurette-heading">
-              Garifuna Food{" "}
-              {/* <span class="text-muted">It’ll blow your mind.</span> */}
-            </h2>
+            <h2 className="featurette-heading mt-4">Garifuna Food</h2>
             <p className="lead">
-              Garifuna food is traditionally based on the staple foods of
-              cassava, plantain and banana, combined with fish and other
-              seafood. The colors of the Garifuna flag reflect the importance of
-              cassava to the Garifuna people, as the yellow stripe represents
-              the color of cassava bread; “ereba” in the Garifuna language.
-              Cassava is not only made into flatbread, but also into sweet
-              deserts such as cassava pudding (also known as plastic cake due to
-              its rubbery consistency), and sweetened drinks like sahou. It is
-              also sometimes included in stews. Plantain and banana are used
-              both ripe and unripe (green) in Garifuna food. The word “hudut” is
-              commonly used to refer to the popular fish and coconut milk stew
-              served with mashed plantain. In actual fact is the word for the
-              plantain alone. The plantain served with the fish is a combination
-              of around three parts green plantain to one part ripe plantain.
-              Both are boiled and then pounded together in a wooden “mata” until
-              the consistency of a moist dough. Mashed plantain is served with
-              other Garifuna dishes such as “Tikini” and “Tapado”.
+              For the Garifuna people of coastal Honduras, coming together to
+              cook the foods of their ancestors provides a sense of identity and
+              continuity that transcends borders. Garifuna food is traditionally
+              based on the staple foods of cassava, plantain and banana,
+              combined with fish and other seafood.
+            </p>
+            <p className="lead">
+              The colors of the Garifuna flag reflect the importance of cassava
+              to the Garifuna people, as the yellow stripe represents the color
+              of cassava bread; “ereba” in the Garifuna language. Cassava is not
+              only made into flatbread, but also into sweet deserts such as
+              cassava pudding (also known as plastic cake due to its rubbery
+              consistency), and sweetened drinks like sahou. It is also
+              sometimes included in stews.
+            </p>
+            <p className="lead">
+              Plantain and banana are used both ripe and unripe (green) in
+              Garifuna food. The word “hudut” is commonly used to refer to the
+              popular fish and coconut milk stew served with mashed plantain. In
+              actual fact is the word for the plantain alone. The plantain
+              served with the fish is a combination of around three parts green
+              plantain to one part ripe plantain. Both are boiled and then
+              pounded together in a wooden “mata” until the consistency of a
+              moist dough. Mashed plantain is served with other Garifuna dishes
+              such as “Tikini” and “Tapado”.
             </p>
           </div>
           <div class="col-md-5">
             <img
-              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500"
-              height="700"
+              className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto mt-5"
               src={Image}
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-              role="img"
-              aria-label="Placeholder: 500x500"
               alt=""
+              style={{
+                display: "block",
+                marginLeft: "auto",
+                marginRight: "auto",
+                width: "100%",
+                objectFit: "cover",
+              }}
             />
           </div>
         </div>
       </div>
-
+      <hr />
       <div>
         <h1 className="mt-5" style={{ alignText: "center" }}>
           Garifuna Recipes

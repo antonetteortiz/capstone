@@ -45,13 +45,18 @@ function RecipePage(props) {
             </h3>
             <h6 style={{ paddingTop: "20px" }}>{recipe.servings}</h6>
 
-            <p style={{ paddingTop: "20px" }}>{recipe.steps}</p>
+            <p style={{ paddingTop: "20px" }}>{recipe.steps.map((steps, l) => {
+              return (
+                <p>- {steps}</p>
+              )
+            })}</p>
 
             <hr />
 
             <div className="card my-4 recipeComment">
               <h5 className="card-header">Leave a Comment:</h5>
               <div className="card-body">
+
                 <form>
                   <div className="form-group">
                     <textarea className="form-control" rows="3"></textarea>

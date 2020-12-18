@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 import "./Music.css";
 import Navbar from "../Navbar/Navbar";
+import Drumming from "../../audio/Traditional Garifuna drumming - Paranda with Warasa.mp3"
 
 function Music(props) {
   const [music, setMusic] = useState([]);
@@ -77,15 +78,17 @@ function Music(props) {
   return (
     <div>
       <Navbar />
-      <div className="musicContainer">
+      <div className="music-container">
         <div className="gariInfo">
-          <h1>Garifuna Music</h1>
+          <h1 classname="m-4">Garifuna Music</h1>
           <div className="info">
             <img
+              className="img-fluid band float-right"
               src="https://www.womex.com/virtual/image/artist/the_garifuna_big_61532.jpg"
               alt="..."
+              align="top"
             />
-            <span>
+            <p className="lead">
               "Garifuna music is an ethnic music and dance with African and
               Arawak elements, originated by an Afro Indigenous group known as
               the Garifuna people, pre to their exile to Central
@@ -101,20 +104,25 @@ function Music(props) {
               are punta and paranda. In 2001, Garifuna music, dance, and
               language was proclaimed as a Masterpiece of the Oral and
               Intangible Heritage of Humanity by UNESCO." - Source Wikipedia
-            </span>
+            </p>
 
-            <form className="form-inline">
+            <form className="form">
               <input
                 className="form-control mr-sm-2"
                 type="text"
                 placeholder="Enter Artist Name"
-                // aria-label="Search"
+                style={{ border: "1px solid black" }}
                 value={artistSearch}
                 onChange={searchArtist}
               />
 
               <button
                 className="btn btn-outline-success my-2 my-sm-0"
+                style={{
+                  border: "1px solid black",
+                  backgroundColor: "black",
+                  color: "#ffd800",
+                }}
                 type="submit"
                 onClick={() => searchArtist()}
               >
@@ -127,8 +135,8 @@ function Music(props) {
                 className="btn my-2 my-lg-0 form-inline"
                 style={{
                   border: "1px solid black",
-                  backgroundColor: "#FFD800",
-                  marginLeft: "10px",
+                  backgroundColor: "black",
+                  color: "#ffd800",
                 }}
                 type="submit"
               >
@@ -137,8 +145,8 @@ function Music(props) {
             </Link>
           </div>
         </div>
-        <br />
-        <br />
+        <hr />
+        <h1>Garifuna Artist</h1>
         <div className="row row-cols-3 row-cols-md-3">
           {artistSearch.length > 1 ? filteredMusicList : musicList}
         </div>

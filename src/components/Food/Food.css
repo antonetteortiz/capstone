@@ -1,7 +1,6 @@
 .recipeHeading {
     margin: 0 auto;
-    border: 1px solid red;
-    
+    padding-top: 2%;    
 }
 
 .recipeCard {
@@ -30,7 +29,6 @@
     cursor:pointer;
     overflow: hidden;
     outline:none;
-    /* position: absolute; */
     bottom: 200px;
 }
 
