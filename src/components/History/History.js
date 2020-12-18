@@ -5,6 +5,7 @@ import "./History.css";
 
 function History(props) {
   console.log(props);
+  
   let heroesList = props.heroesList.map((heroes, i) => {
     return (
       <div className="img-card">

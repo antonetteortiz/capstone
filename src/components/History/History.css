@@ -19,13 +19,13 @@
 }
 
 .img-card {
-  width: 30vw;
+  width: 20vw;
   margin: 2%;
 }
 
 .img-card img {
-  height: 30vw;
-  width: 30vw;
+  height: 20vw;
+  width: 20vw;
   border: 5px solid white;
 }
 
@@ -44,6 +44,18 @@
 .img-card img {
   height: 50vw;
   width: 50vw;
+}
+  
+}
+@media (max-width: 1300px) {
+  
+  .img-card {
+  width: 20vw;
+}
+
+.img-card img {
+  height: 20vw;
+  width: 20vw;
 }
   
 }

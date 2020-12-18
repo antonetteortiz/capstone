@@ -19,6 +19,9 @@
     height: 356px;
     object-fit: cover;
 }
+.card-button {
+    position: relative;
+}
 
 .recipeButton {
     background-color: Transparent;
@@ -27,4 +30,7 @@
     cursor:pointer;
     overflow: hidden;
     outline:none;
+    /* position: absolute; */
+    bottom: 200px;
 }
+

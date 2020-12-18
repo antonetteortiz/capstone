@@ -31,7 +31,12 @@ function RecipePage(props) {
             <h2 className="lead" style={{ paddingTop: "20px" }}>
               Ingredients
             </h2>
-            <p style={{ paddingTop: "20px" }}>{recipe.ingredients}</p>
+
+            <p style={{ paddingTop: "20px" }}>{recipe.ingredients.map((ingredient, j) => { 
+              return (
+              <p>{ingredient}</p>
+              )
+            })}</p>
 
             <hr />
 

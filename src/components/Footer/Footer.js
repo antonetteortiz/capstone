@@ -9,7 +9,7 @@ function Footer() {
           <div className="row">
             {/* Column 1 */}
             <div className="col-md-4">
-              <a href="/welcome">
+              <a href="/">
                 <h4>YURUMEI</h4>
               </a>
               <ul className="list-unstyled">

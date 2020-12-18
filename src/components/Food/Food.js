@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Navbar from "../Navbar/Navbar";
-import "./Food.css"
+import "./Food.css";
 import Image from "../../images/cassavaBread.jpg";
 
 function Food(props) {
@@ -64,12 +64,12 @@ function Food(props) {
 
   const classes = useStyles();
 
-// Recipe Search
+  // Recipe Search
 
-const [recipeSearch, setRecipeSearch] = useState("");
-const [filteredRecipeList, setFilteredRecipeList] = useState([]);
+  const [recipeSearch, setRecipeSearch] = useState("");
+  const [filteredRecipeList, setFilteredRecipeList] = useState([]);
 
-const searchRecipe = (e) => {
+  const searchRecipe = (e) => {
     e.preventDefault();
     console.log(e.target.value);
     setRecipeSearch(e.target.value);
@@ -79,12 +79,10 @@ const searchRecipe = (e) => {
       );
       console.log(newRecipeArr);
       setFilteredRecipeList(newRecipeArr);
-    }; 
-}
+    }
+  };
 
-
-
-// Place data from API in cards
+  // Place data from API in cards
   let recipeList = props.recipeList.map((recipe, i) => {
     // console.log(recipe)
     return (
@@ -98,14 +96,18 @@ const searchRecipe = (e) => {
 
         {/* name/description */}
         <div style={{ paddingTop: "20px", paddingLeft: "10px" }}>
+        <div style={{height: "60px"}}>
           <h4>{recipe.recipeName}</h4>
+        </div>
           <div style={{ borderTop: "2px solid #FFD800" }}>
-            <p style={{ paddingTop: "10px" }}>{recipe.description}</p>
+            <p style={{ paddingTop: "10px", height: "100px" }}>
+              {recipe.description}
+            </p>
           </div>
         </div>
 
         {/* action container */}
-        <div style={{ display: "flex", margin: "1rem" }}>
+        <div style={{ display: "flex", marginBottom: "30px" }}>
           <button
             className="recipeButton"
             style={{
@@ -128,7 +130,7 @@ const searchRecipe = (e) => {
     );
   });
 
-  console.log(filteredRecipeList)
+  console.log(filteredRecipeList);
   let recipeListFiltered = filteredRecipeList.map((recipe, i) => {
     return (
       // card container
@@ -145,29 +147,34 @@ const searchRecipe = (e) => {
           style={{ paddingTop: "20px", paddingLeft: "10px" }}
         >
           <h4 className="lead">{recipe.recipeName}</h4>
-          <div style={{ borderTop: "2px solid #FFD800" }}>
-            <p className="lead" style={{ paddingTop: "10px" }}>{recipe.description}</p>
+          <div style={{ borderTop: "2px solid #FFD800", height: "100px" }}>
+            <p className="lead" style={{ paddingTop: "10px" }}>
+              {recipe.description}
+            </p>
           </div>
         </div>
 
         {/* action container */}
-        <div style={{ display: "flex", margin: "1rem" }}>
-          <button
-            className="recipeButton"
-            style={{
-              outline: "none",
-              border: "none",
-              marginRight: "10px",
-              borderRadius: "4px",
-            }}
-          >
-            Like
-          </button>
-          <Link to={`/recipe/${recipe.recipeName}`}>
-            <button className="recipeButton" size="small" color="primary">
-              View
+        <div className="card-button">
+          <div style={{ display: "flex", margin: "1rem" }}>
+            <button
+              className="recipeButton"
+              style={{
+                outline: "none",
+                border: "none",
+                marginRight: "10px",
+                borderRadius: "4px",
+              }}
+            >
+              Like
             </button>
-          </Link>
+
+            <Link to={`/recipe/${recipe.recipeName}`}>
+              <button className="recipeButton" size="small" color="primary">
+                View
+              </button>
+            </Link>
+          </div>
         </div>
         {/* action container END */}
       </div>
@@ -176,14 +183,14 @@ const searchRecipe = (e) => {
 
   return (
     <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-evenly",
-      }}
+    // style={{
+    //   display: "flex",
+    //   flexDirection: "column",
+    //   justifyContent: "space-evenly",
+    // }}
     >
       <Navbar />
-      <div style={{ backgroundColor: "red" }}>
+      <div style={{ backgroundColor: "red", width: "100%" }}>
         <div className="row featurette recipeHeading">
           <div className="col-md-7">
             <h2 className="featurette-heading">
@@ -227,7 +234,9 @@ const searchRecipe = (e) => {
       </div>
 
       <div>
-        <h1 className="mt-5" style={{alignText: "center"}}>Garifuna Recipes</h1>
+        <h1 className="mt-5" style={{ alignText: "center" }}>
+          Garifuna Recipes
+        </h1>
         <div className={classes.heroButtons}>
           <Grid container spacing={2} justify="center">
             <Grid item className="d-flex">
@@ -242,7 +251,7 @@ const searchRecipe = (e) => {
                 />
 
                 <button
-                  className="btn my-2 my-lg-0"
+                  className="btn my-2 my-lg-0 "
                   style={{
                     border: "1px solid black",
                     backgroundColor: "#FFD800",
@@ -256,7 +265,7 @@ const searchRecipe = (e) => {
 
               <Link to="/addrecipe">
                 <button
-                  className="btn my-2 my-lg-0 form-inline"
+                  className="btn my-2 my-lg-0 form-inline "
                   style={{
                     border: "1px solid black",
                     backgroundColor: "#FFD800",
