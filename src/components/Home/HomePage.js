@@ -196,8 +196,8 @@ function HomePage() {
         <div className="row featurette">
           <div className="col-md-7 order-md-2">
             <h2 className="featurette-heading">
-              Oh yeah, it’s that good.{" "}
-              <span className="text-muted">See for yourself.</span>
+              Language{" "}
+              <span className="text-muted"></span>
             </h2>
             <p className="lead">
               Garifuna is a minority language widely spoken in villages of
