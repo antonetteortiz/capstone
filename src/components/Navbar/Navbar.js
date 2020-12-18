@@ -39,11 +39,6 @@ const handleAccount = () => {
   setOpen(true)
 }
 
-// const style = {
-//   background: "#FFD800",
-//   color: "black"
-// };
-
   return (
     <div className={classes.root}>
       <AppBar
@@ -74,6 +69,7 @@ const handleAccount = () => {
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
+
 
       <Drawer
         anchor={anchor}

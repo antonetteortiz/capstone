@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Map from "../../images/map.gif";
 import "./History.css";
@@ -9,7 +10,6 @@ function History(props) {
   let heroesList = props.heroesList.map((heroes, i) => {
     return (
       <div className="img-card">
-     
         <img
           class="bd-placeholder-img rounded-circle img-fluid "
           src={heroes.photo}
@@ -21,13 +21,13 @@ function History(props) {
         </h2>
 
         <p className="lead text-center">
-            <i>{heroes.birthdate}</i> 
+          <i>{heroes.birthdate}</i>
         </p>
 
-        <p className="lead">{heroes.notableAccomplishments}</p>
-        <p className="lead" style={{ paddingBottom: "0px 60px" }}>
-          <a className="btn btn-secondary" href="/home">
-            View details &raquo;
+        <p className="lead text-center">{heroes.notableAccomplishments}</p>
+        <p className="lead text-center" style={{ paddingBottom: "0px 60px" }}>
+          <a href="/language" style={{ color: "black" }}>
+            <small className="lead">learn more</small>
           </a>
         </p>
       </div>
@@ -51,12 +51,12 @@ function History(props) {
             />
 
             <p className="lead">
-              The West African transplants were either ship-wrecked or escaped
-              from the Caribbean islands of Barbados, St. Lucia and Grenada,
-              depending on the source. They intermarried with local populations
-              of Arawaks and Carib Indians (Caribs), immigrants from South
-              America, to become known as Garifunas or Black Caribs. (Click on
-              the image to view the full-size map.)
+              <b>Garifuna</b> is both a language (a dialect) and a group of
+              people. The Garinagu – the plural form of Garifuna – are
+              indigenous, mixed-race descendants of West African, Island Carib,
+              and Arawak people. In 1635, escaped and shipwrecked Africans found
+              refuge on the island of Saint Vincent and intermarried with the
+              Island Caribs and the Arawaks, resulting in the Garifuna people.
             </p>
             <p className="lead">
               For a time, the Afro-Caribbean Garifunas lived peacefully
@@ -73,13 +73,41 @@ function History(props) {
               the other Honduras Bay Islands and gaining better access to a
               workforce of Garifuna laborers.
             </p>
+
+            <p className="lead">
+              Today, the global population of Garifunas stands at upwards of
+              300,000 people, many of whom live in the U.S. and Canada. Garifuna
+              communities along the Caribbean Sea live mostly in coastal towns
+              and villages in the Central American countries of Belize,
+              Guatemala, Honduras and Nicaragua.
+            </p>
           </main>
         </div>
 
         <div>
           <hr />
           <h2 className="mt-4">Garifuna Heroes</h2>
+          <p className="lead">
+            Heroic and inspiring Garinagu who have fought for the Garifuna's and
+            their culture.
+          </p>
           <div className="heroes-container">{heroesList}</div>
+          <div>
+            <Link to="/addhero">
+              <button
+                className="btn my-2 my-lg-0 form-inline "
+                style={{
+                  border: "1px solid black",
+                  backgroundColor: "black",
+                  color: "#ffd800",
+                  margin: "0 auto"
+                }}
+                type="submit"
+              >
+                Add a hero
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

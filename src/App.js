@@ -9,6 +9,7 @@ import Recipe from "./components/Food/Recipe";
 import AddRecipe from "./components/Food/AddRecipe";
 import HomePage from "./components/Home/HomePage";
 import History from "./components/History/History";
+import AddHero from "./components/History/AddHero"
 import LandingPage from "./components/LandingPage/LandingPage";
 import Footer from "./components/Footer/Footer";
 
@@ -121,6 +122,10 @@ function App() {
 
           <Route path="/history">
             <History heroesList={heroes} />
+          </Route>
+
+          <Route path="/addhero">
+            <AddHero />
           </Route>
         </Switch>
       </div>

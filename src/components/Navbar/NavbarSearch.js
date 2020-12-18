@@ -1,101 +1,82 @@
-import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import InputBase from "@material-ui/core/InputBase";
-import { fade, makeStyles } from "@material-ui/core/styles";
-import MenuIcon from "@material-ui/icons/Menu";
-import SearchIcon from "@material-ui/icons/Search";
+const Phone = styled.div`
+  overflow: hidden;
+  position: relative;
+  width: 240px;
+  height: 480px;
+  border-radius: 40px;
+  background: #5a32a0;
+`;
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-    display: "none",
-    [theme.breakpoints.up("sm")]: {
-      display: "block",
-    },
-  },
-  search: {
-    position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(1),
-      width: "auto",
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  inputRoot: {
-    color: "inherit",
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
-  },
-}));
+const openStyles = css`
+  transform: translateX(110px) scale(0.85);
+`;
 
-export default function SearchAppBar() {
-  const classes = useStyles();
+const Content = styled.div`
+  height: 800px;
+  padding: 2rem 1.5rem;
+  border-radius: 40px;
+  background: #210f40;
+  transform: translateX(0) scale(1);
+  transition: 0.45s;
+  ${(p) => p.open && openStyles};
+`;
 
+const Burger = styled.button`
+  background: transparent;
+  border: 0;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+`;
+
+const Nav = styled.nav`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+`;
+
+const NavButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 44px;
+  padding: 0 1rem;
+  border: 0;
+  background: transparent;
+  color: ${rgba("white", 0.5)};
+  cursor: pointer;
+
+  &:hover {
+    color: ${rgba("white", 0.85)};
+  }
+`;
+
+const NavIcon = styled.span`
+  margin-right: 0.5rem;
+  font-size: 20px;
+`;
+
+const NavText = styled.span`
+  font-size: 0.875rem;
+`;
+
+const NavbarSearch = () => {
+  const [open, setOpen] = useState(false);
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Yurumei
-          </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ "aria-label": "search" }}
-            />
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <Phone>
+      <Nav>
+        <NavButton>
+          <NavIcon className="uil uil-home" />
+          <NavText>Home</NavText>
+        </NavButton>
+      </Nav>
+      <Content open={open}>
+        <Burger onClick={() => setOpen(!open)} className="uil uil-bars" />
+      </Content>
+    </Phone>
   );
-}
+};
+
+export default NavbarSearch;
