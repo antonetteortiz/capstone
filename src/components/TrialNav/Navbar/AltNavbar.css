@@ -12,7 +12,7 @@
     cursor: pointer;
 }
 
-img{
+.mainlogo{
     margin-left: 0.5rem;
     height: 60px;
     width: 60px;
@@ -42,4 +42,14 @@ img{
     transition: all 0.2s ease-out;
 }
 
+.fa-bars {
+    font-size: 30px;
+}
 
+.nav-links-mobile {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
