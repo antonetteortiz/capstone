@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 import "./Music.css";
+import AltNav from "../TrialNav/Navbar/AltNavbar.js";
 import Navbar from "../Navbar/Navbar";
 import Grid from "@material-ui/core/Grid";
 
@@ -75,7 +76,7 @@ function Music(props) {
 
   return (
     <div>
-      <Navbar />
+      <AltNav />
       <div className="music-container m-4">
         <div className="gariInfo">
           <h1 classname="m-4">Garifuna Music</h1>

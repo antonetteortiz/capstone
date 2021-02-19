@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Map from "../../images/map.gif";
+import AltNav from "../TrialNav/Navbar/AltNavbar.js";
 import "./History.css";
 
 function History(props) {
@@ -36,7 +37,7 @@ function History(props) {
 
   return (
     <div>
-      <Navbar />
+      <AltNav />
       <div className="m-4 history-container">
         <div>
           <h1 className="m-4">History of the Garifuna's</h1>

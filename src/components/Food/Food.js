@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Navbar from "../Navbar/Navbar";
+import AltNav from "../TrialNav/Navbar/AltNavbar.js";
 import "./Food.css";
 import Image from "../../images/cassavaBread.jpg";
 
@@ -184,7 +185,7 @@ function Food(props) {
     //   justifyContent: "space-evenly",
     // }}
     >
-      <Navbar />
+      <AltNav />
       <div className="m-4" style={{ width: "100%" }}>
         <div className="row featurette recipeHeading">
           <div className="col-md-7">
