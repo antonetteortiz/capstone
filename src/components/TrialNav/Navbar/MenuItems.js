@@ -1,38 +1,37 @@
 export const MenuItems = [
   {
     title: "Home",
-    url: "#",
+    url: "yurumei.org/home",
     cName: "nav-links",
   },
   {
     title: "History",
-    url: "#",
+    url: "yurumei.org/history",
     cName: "nav-links",
   },
   {
     title: "Language",
-    url: "#",
+    url: "yurumei.org/language",
     cName: "nav-links",
   },
   {
     title: "Food",
-    url: "#",
+    url: "yurumei.org/food",
     cName: "nav-links",
   },
   {
     title: "Music",
-    url: "#",
+    url: "yurumei.org/music",
     cName: "nav-links",
   },
   {
     title: "Forum",
-    url: "#",
+    url: "yurumei.org/forum",
     cName: "nav-links",
   },
   {
     title: "Sign Up",
     url: "#",
     cName: "nav-links-mobile",
-  }
-
-]
+  },
+];

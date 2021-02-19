@@ -3,10 +3,10 @@ import "./HomePage.css";
 import AltNav from "../TrialNav/Navbar/AltNavbar.js"
 import Navbar from "../Navbar/Navbar";
 import Slide1 from "../../images/Yurumein-2017_28.jpg";
-import Slide2 from "../../images/garifunagirls.jpg";
+import Slide2 from "../../images/garifunagirls1.png";
 import Slide3 from "../../images/hudut.jpg";
 import Slide4 from "../../images/jankunu.jpg";
-import Slide5 from "../../images/dangriga.jpg";
+import Slide5 from "../../images/dangriga1.png";
 import Slide6 from "../../images/soup.jpg";
 import History from "../../images/history.png";
 import Food from "../../images/food.jpg";
