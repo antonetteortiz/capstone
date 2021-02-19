@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { NavItem } from "react-bootstrap";
 import { MenuItems } from "./MenuItems";
-import "./AltNavbar.css"
-import logo from "../../../images/yurume.png"
+import "./AltNavbar.css";
+import logo from "../../../images/yurume.png";
+import { Button } from "../Button";
 
 class Navbar extends Component {
   state = { clicked: false}
@@ -34,6 +35,7 @@ class Navbar extends Component {
             )
         })}
         </ul>
+        <Button>Sign Up</Button>
       </nav>
     );
   }
