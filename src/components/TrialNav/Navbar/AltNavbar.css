@@ -17,3 +17,29 @@ img{
     height: 60px;
     width: 60px;
 }
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 70vw;
+    justify-content: end;
+    margin-right: 2rem;
+}
+
+.nav-links {
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links:hover {
+    background-color: black;
+    color: #ffd800;
+    border-radius: 4px;
+    transition: all 0.2s ease-out;
+}
+
+

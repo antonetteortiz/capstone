@@ -13,15 +13,16 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="NavbarItems">
-        <h1 className="navbar-logo">
-        <img src={logo} className="mainlogo"/>
-        YURUMEI
-        </h1>
+
         <div className="menu-icon" onClick={this.handleClick}>
           <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
 
         </div>
-        <ul>
+        <h1 className="navbar-logo">
+          <img src={logo} className="mainlogo"/>
+          YURUMEI
+        </h1>
+        <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
         {/* map over data in the menu item array */}
         {MenuItems.map((item, index) =>{
             return (
