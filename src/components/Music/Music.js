@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import "./Music.css";
 import Navbar from "../Navbar/Navbar";
 import Grid from "@material-ui/core/Grid";
-import Drumming from "../../audio/Traditional Garifuna drumming - Paranda with Warasa.mp3"
 
 function Music(props) {
   const [music, setMusic] = useState([]);
