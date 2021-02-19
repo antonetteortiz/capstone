@@ -1,0 +1,19 @@
+.NavbarItems {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.navbar-logo{
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+img{
+    margin-left: 0.5rem;
+    height: 60px;
+    width: 60px;
+}

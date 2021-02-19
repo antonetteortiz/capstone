@@ -1,5 +1,6 @@
 import React from "react";
 import "./HomePage.css";
+import AltNav from "../TrialNav/Navbar/AltNavbar.js"
 import Navbar from "../Navbar/Navbar";
 import Slide1 from "../../images/Yurumein-2017_28.jpg";
 import Slide2 from "../../images/garifunagirls.jpg";
@@ -16,8 +17,10 @@ import Forum from "../../images/forum.png";
 function HomePage() {
   return (
     <div>
-      <Navbar />
+      <AltNav />
+
       {/* Carousel */}
+      
       <div id="myCarousel" className="carousel slide" data-ride="carousel">
         <ol className="carousel-indicators">
           <li
